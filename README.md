@@ -1,73 +1,117 @@
-# Welcome to your Lovable project
 
-## Project info
+# Skydenex - Drone Defense Shield Initiative
 
-**URL**: https://lovable.dev/projects/cf0859eb-6bc5-4f1a-945f-6b67a7ece876
+## About Skydenex
 
-## How can I edit this code?
+Skydenex is a defense startup that's revolutionizing how military vehicles protect themselves against FPV kamikaze drones. Our solution is a modular, non-lethal defense system that uses micro-missile technology to neutralize drone threats effectively and safely.
 
-There are several ways of editing your application.
+## Project Description
 
-**Use Lovable**
+This repository contains the code for the Skydenex landing page, a single-page React application built with:
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui component library
+- Modern animations and transitions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cf0859eb-6bc5-4f1a-945f-6b67a7ece876) and start prompting.
+The landing page showcases the problem Skydenex is solving, our innovative solution, information about our founders, and a contact form for inquiries.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Features
 
-**Use your preferred IDE**
+- Responsive design that works on all device sizes
+- Dark-themed, high-tech aesthetic
+- Smooth animations and transitions
+- Interactive navigation
+- Sections for Problem Statement, Solution Overview, About Us, and Contact
+- Animated component reveals on scroll
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
 
-Follow these steps:
+- Node.js 18.0.0 or higher
+- npm or yarn package manager
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/skydenex-landing.git
+cd skydenex-landing
 ```
 
-**Edit a file directly in GitHub**
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-**Use GitHub Codespaces**
+4. Open your browser and navigate to http://localhost:5173 to see the application running.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+├── public/                  # Public assets
+│   └── lovable-uploads/     # Uploaded images
+├── src/
+│   ├── components/          # React components
+│   │   ├── AboutUs.tsx      # About Us section
+│   │   ├── Contact.tsx      # Contact section
+│   │   ├── Footer.tsx       # Page footer
+│   │   ├── Hero.tsx         # Hero section
+│   │   ├── Navbar.tsx       # Navigation bar
+│   │   ├── Problem.tsx      # Problem section
+│   │   ├── Solution.tsx     # Solution section
+│   │   └── ui/              # UI components (shadcn/ui)
+│   ├── pages/               # Page components
+│   │   └── Index.tsx        # Main landing page
+│   ├── App.tsx              # Main App component
+│   ├── main.tsx             # Entry point
+│   └── index.css            # Global styles
+├── README.md                # This file
+└── package.json             # Project dependencies and scripts
+```
 
-This project is built with:
+## Customization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Changing Colors
 
-## How can I deploy this project?
+To change the color scheme, modify the appropriate Tailwind CSS classes in the components. The primary colors used are:
 
-Simply open [Lovable](https://lovable.dev/projects/cf0859eb-6bc5-4f1a-945f-6b67a7ece876) and click on Share -> Publish.
+- Blue: Problem section accent color
+- Red: Problem section accent color
+- Green: Contact section accent color
+- Purple: About Us section accent color
 
-## Can I connect a custom domain to my Lovable project?
+### Adding Content
 
-Yes, you can!
+To add or modify content, edit the corresponding component files in the `src/components` directory.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Deploying
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Build the production version of the site with:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+The compiled files will be in the `dist` directory, which can be deployed to any static site hosting service like Netlify, Vercel, or GitHub Pages.
+
+## Founders
+
+- Jiri Minarik - Co-founder
+- Joshua Soutelo - Co-founder
+
+## License
+
+All rights reserved. This code is the property of Skydenex and may not be reproduced or distributed without permission.
