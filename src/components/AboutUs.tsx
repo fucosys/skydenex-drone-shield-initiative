@@ -139,7 +139,7 @@ const AboutUs = () => {
               >
                 <div className="flex items-center justify-center">
                   <img 
-                    src="/lovable-uploads/0f5e37d8-f5c4-441e-aeda-65a737e569f4.png" 
+                    src="/lovable-uploads/4da554b4-929c-4e0a-9107-4ca6b5b98942.png" 
                     alt="Antler Logo" 
                     className="h-8 w-auto"
                   />

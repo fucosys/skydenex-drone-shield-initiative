@@ -105,7 +105,7 @@ const Solution = () => {
                 <CardContent className="p-6 pl-8">
                   <div className="flex items-center mb-4">
                     {feature.icon}
-                    <h4 className="text-xl font-semibold ml-3">{feature.title}</h4>
+                    <h4 className="text-xl font-semibold ml-3 text-blue-300">{feature.title}</h4>
                   </div>
                   <p className="text-gray-300">{feature.description}</p>
                 </CardContent>
@@ -121,19 +121,19 @@ const Solution = () => {
               <h3 className="text-2xl font-bold mb-4">Key Advantages</h3>
               <div className="grid md:grid-cols-3 gap-6 text-left mt-6">
                 <div className="bg-slate-800/50 p-5 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Cost-Effective</h4>
+                  <h4 className="text-lg font-semibold mb-2 text-blue-300">Cost-Effective</h4>
                   <p className="text-gray-300 text-sm">
                     Significantly lower cost than competing solutions, making widespread deployment feasible.
                   </p>
                 </div>
                 <div className="bg-slate-800/50 p-5 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Easy Integration</h4>
+                  <h4 className="text-lg font-semibold mb-2 text-blue-300">Easy Integration</h4>
                   <p className="text-gray-300 text-sm">
                     Magnetic attachment allows deployment on various vehicle types without permanent modification.
                   </p>
                 </div>
                 <div className="bg-slate-800/50 p-5 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2">Logistics-Friendly</h4>
+                  <h4 className="text-lg font-semibold mb-2 text-blue-300">Logistics-Friendly</h4>
                   <p className="text-gray-300 text-sm">
                     Lightweight design and simple reloading mechanism optimized for field operations.
                   </p>

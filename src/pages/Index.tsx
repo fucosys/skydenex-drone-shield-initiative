@@ -20,6 +20,11 @@ const customStyles = `
   h4.text-xl.font-semibold.mb-2.text-center {
     color: #8B5CF6 !important; /* vivid purple for better visibility */
   }
+  
+  /* Solution component feature title overrides */
+  .text-xl.font-semibold.ml-3 {
+    color: #a5b4fc !important; /* light indigo color for better visibility */
+  }
 `;
 
 const Index = () => {
