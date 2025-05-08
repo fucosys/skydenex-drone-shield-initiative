@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background with overlay */}
-      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80')] bg-cover bg-center">
+      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&q=80')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
       
@@ -36,7 +36,7 @@ const Hero = () => {
             }`}
           >
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-blue-400">
-              Defending the Future
+              Ensuring Europe's Defense Sovereignty
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
               Skydenex is revolutionizing defense against FPV kamikaze drones with our 

@@ -70,8 +70,12 @@ const AboutUs = () => {
                   <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black to-transparent"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold mb-2">Jiri Minarik</h3>
-                  <p className="text-purple-400 mb-4">Co-Founder</p>
+                  <h3 className="text-2xl font-semibold mb-2 text-purple-400">Jiri Minarik</h3>
+                  <p className="text-purple-300 mb-4">Co-Founder</p>
+                  <p className="text-gray-300 mb-4">
+                    MSc Cybernetics, Control Engineer Unicorn, Published multiple patents, 5 years experience in aerospace, 
+                    responsible for company strategy and vision and product.
+                  </p>
                   <p className="text-gray-300">
                     Leads our technological innovation with expertise in drone defense systems and 
                     guidance technology. Focused on creating efficient and effective counter-drone solutions.
@@ -91,8 +95,13 @@ const AboutUs = () => {
                   <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black to-transparent"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold mb-2">Joshua Soutelo</h3>
-                  <p className="text-purple-400 mb-4">Co-Founder</p>
+                  <h3 className="text-2xl font-semibold mb-2 text-purple-400">Joshua Soutelo</h3>
+                  <p className="text-purple-300 mb-4">Co-Founder</p>
+                  <p className="text-gray-300 mb-4">
+                    MSc Computer Vision, European Defense Tech Hackathon '24 Winner of EDTH Munich '24, 
+                    responsible for partnerships and engineering and has deep defense industry connections 
+                    and market know-how, working in rocket/missile space for over a year.
+                  </p>
                   <p className="text-gray-300">
                     Drives our strategic vision and partnerships with deep understanding of defense industry needs 
                     and market opportunities. Focused on building connections with key stakeholders.
