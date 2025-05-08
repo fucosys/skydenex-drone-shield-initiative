@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/sonner";
+import { Building } from "lucide-react";
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -149,7 +150,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-gray-400 text-sm">Location</p>
-                <p>European Defense Tech Hub, Prague</p>
+                <p>Munich, Germany</p>
               </div>
             </div>
             

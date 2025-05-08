@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Globe, Building } from "lucide-react";
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -122,10 +123,13 @@ const AboutUs = () => {
                 rel="noopener noreferrer"
                 className="bg-slate-900 px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors"
               >
-                <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded font-semibold">
-                  EDTH
-                </span>
-                <span className="text-white">European Defense Tech Hub</span>
+                <div className="bg-gradient-to-r from-purple-500 to-blue-500 text-white p-2 rounded flex items-center justify-center">
+                  <Globe size={18} />
+                </div>
+                <div>
+                  <span className="font-semibold text-white">EDTH</span>
+                  <span className="text-gray-300 text-sm block">European Defense Tech Hub</span>
+                </div>
               </a>
               <a 
                 href="https://www.antler.co/" 
@@ -133,20 +137,22 @@ const AboutUs = () => {
                 rel="noopener noreferrer"
                 className="bg-slate-900 px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors"
               >
-                <span className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded font-semibold">
-                  Antler
-                </span>
-                <span className="text-white">Global Venture Capital</span>
+                <div className="flex items-center justify-center">
+                  <img 
+                    src="/lovable-uploads/0f5e37d8-f5c4-441e-aeda-65a737e569f4.png" 
+                    alt="Antler Logo" 
+                    className="h-8 w-auto"
+                  />
+                </div>
+                <div>
+                  <span className="font-semibold text-white">Antler</span>
+                  <span className="text-gray-300 text-sm block">Global Venture Capital</span>
+                </div>
               </a>
             </div>
             <p className="mt-8 text-gray-300 text-center">
               We are currently seeking investments from VCs and other investors to raise capital for 
               finishing product development and manufacturing line.
-            </p>
-            <p className="mt-4 text-blue-400 text-center">
-              <span className="inline-block border border-blue-400 px-4 py-2 rounded-full text-sm">
-                Munich, Germany
-              </span>
             </p>
           </div>
         </div>
