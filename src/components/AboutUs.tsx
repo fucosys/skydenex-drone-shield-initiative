@@ -51,8 +51,8 @@ const AboutUs = () => {
               micro-missile technology.
             </p>
             <p className="text-xl text-gray-300">
-              Our solution beats the current state of the art in both price and logistics, which are the most 
-              important characteristics in defense. We have built and tested an MVP.
+              Our solution beats the current status quo in both price and logistics, which are the most 
+              important characteristics in defense.
             </p>
           </div>
         </div>
@@ -115,15 +115,39 @@ const AboutUs = () => {
         <div className={`mt-20 transition-all duration-1000 delay-700 ${fadeInClass}`}>
           <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl p-8 border border-purple-500/20">
             <h3 className="text-2xl font-semibold mb-6 text-center">Our Partners & Affiliations</h3>
-            <div className="text-center">
-              <span className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-semibold">
-                EDTH European Defense Tech Hub
-              </span>
-              <p className="mt-4 text-gray-300">
-                We are part of the EDTH European Defense Tech Hub and are currently seeking investments from VCs 
-                and other investors to raise capital for finishing product development and manufacturing line.
-              </p>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
+              <a 
+                href="https://eurodefense.tech/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-slate-900 px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors"
+              >
+                <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded font-semibold">
+                  EDTH
+                </span>
+                <span className="text-white">European Defense Tech Hub</span>
+              </a>
+              <a 
+                href="https://www.antler.co/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-slate-900 px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors"
+              >
+                <span className="bg-gradient-to-r from-blue-500 to-green-500 text-white px-4 py-2 rounded font-semibold">
+                  Antler
+                </span>
+                <span className="text-white">Global Venture Capital</span>
+              </a>
             </div>
+            <p className="mt-8 text-gray-300 text-center">
+              We are currently seeking investments from VCs and other investors to raise capital for 
+              finishing product development and manufacturing line.
+            </p>
+            <p className="mt-4 text-blue-400 text-center">
+              <span className="inline-block border border-blue-400 px-4 py-2 rounded-full text-sm">
+                Munich, Germany
+              </span>
+            </p>
           </div>
         </div>
       </div>
