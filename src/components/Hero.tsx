@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background with overlay */}
-      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&q=80')] bg-cover bg-center">
+      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1487887235947-a955ef187fcc?auto=format&fit=crop&q=80')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
       

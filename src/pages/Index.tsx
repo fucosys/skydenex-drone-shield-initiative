@@ -15,6 +15,11 @@ const customStyles = `
     color: #c084fc !important; /* bright purple color for better readability */
     font-weight: 600;
   }
+  
+  /* Problem component text color overrides */
+  h4.text-xl.font-semibold.mb-2.text-center {
+    color: #8B5CF6 !important; /* vivid purple for better visibility */
+  }
 `;
 
 const Index = () => {
