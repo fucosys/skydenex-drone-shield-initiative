@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Shield } from "lucide-react";
 
 interface NavbarProps {
   onProblemClick: () => void;
@@ -45,7 +44,11 @@ const Navbar = ({
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center">
           <div className="flex items-center">
-            <Shield className="h-8 w-8 mr-2 text-blue-500" />
+            <img 
+              src="/lovable-uploads/4022b677-8ab7-473d-95ea-ba91a0952756.png" 
+              alt="Skydenex Logo" 
+              className="h-8 w-8 mr-2" 
+            />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
               SKYDENEX
             </span>
