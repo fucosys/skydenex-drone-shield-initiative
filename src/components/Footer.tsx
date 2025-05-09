@@ -1,5 +1,5 @@
 
-import { Shield, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,7 +7,11 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center mb-6 md:mb-0">
-            <Shield className="h-6 w-6 mr-2 text-blue-500" />
+            <img 
+              src="/lovable-uploads/4022b677-8ab7-473d-95ea-ba91a0952756.png" 
+              alt="Skydenex Logo" 
+              className="h-6 w-6 mr-2" 
+            />
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
               SKYDENEX
             </span>
