@@ -116,7 +116,7 @@ const AboutUs = () => {
         <div className={`mt-20 transition-all duration-1000 delay-700 ${fadeInClass}`}>
           <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl p-8 border border-purple-500/20">
             <h3 className="text-2xl font-semibold mb-6 text-center">Our Partners & Affiliations</h3>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
+            <div className="flex justify-center items-center">
               <a 
                 href="https://eurodefense.tech/" 
                 target="_blank" 
@@ -129,24 +129,6 @@ const AboutUs = () => {
                 <div>
                   <span className="font-semibold text-white">EDTH</span>
                   <span className="text-gray-300 text-sm block">European Defense Tech Hub</span>
-                </div>
-              </a>
-              <a 
-                href="https://www.antler.co/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-slate-900 px-6 py-4 rounded-lg flex items-center gap-3 hover:bg-slate-800 transition-colors"
-              >
-                <div className="flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/a7ed2689-34e1-4337-ba08-4c0bcc940613.png" 
-                    alt="Antler Logo" 
-                    className="h-8 w-auto"
-                  />
-                </div>
-                <div>
-                  <span className="font-semibold text-white">Antler</span>
-                  <span className="text-gray-300 text-sm block">Global Venture Capital</span>
                 </div>
               </a>
             </div>
