@@ -124,7 +124,7 @@ const Solution = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent pointer-events-none"></div>
-                <div className="absolute bottom-3 right-3 bg-black/80 px-3 py-1 rounded-md">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black/80 px-3 py-1 rounded-md">
                   <span className="text-green-400 text-sm font-mono">ACTIVE TRACKING</span>
                 </div>
                 <div className="absolute top-3 right-3 bg-red-600/90 px-3 py-1 rounded-md">
