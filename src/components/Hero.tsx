@@ -30,7 +30,7 @@ const Hero = () => {
             touchAction: 'none'
           }}
         >
-          <source src="/SkyDenex - RealShowCase - LowQuality.mp4" type="video/mp4" />
+          <source src="/SkyDenex%20-%20RealShowCase%20-%20LowQuality.mp4" type="video/mp4" />
         </video>
         {/* Fallback gradient for when video is not available */}
         <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 opacity-90"></div>
