@@ -7,6 +7,7 @@ const ScrollAnimations = () => {
   const [maxMissileProgress, setMaxMissileProgress] = useState(0);
   const [maxDroneProgress, setMaxDroneProgress] = useState(0);
   const [currentMissileProgress, setCurrentMissileProgress] = useState(0);
+  const [currentDroneProgress, setCurrentDroneProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +20,13 @@ const ScrollAnimations = () => {
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
         setIsInProblemSection(isVisible);
         
-        // Track max drone progress to keep them visible
+        // Track current drone progress (no lock)
         if (rect.top < window.innerHeight) {
           const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / window.innerHeight));
-          setMaxDroneProgress(prev => Math.max(prev, progress));
+          setCurrentDroneProgress(progress);
+          setMaxDroneProgress(prev => Math.max(prev, progress)); // Keep for show condition
+        } else {
+          setCurrentDroneProgress(0); // Reset when section is not visible
         }
       }
 
@@ -80,18 +84,16 @@ const ScrollAnimations = () => {
         );
       })}
 
-      {/* Threat drones incoming - stay visible after animation */}
-      {showDrones && [...Array(4)].map((_, i) => {
-        const droneProgress = Math.max(maxDroneProgress, isInProblemSection ? scrollY * 0.0005 : 0);
-        
+      {/* Threat drones incoming - move back and forth */}
+      {showDrones && [...Array(4)].map((_, i) => {        
         return (
           <div
             key={`threat-${i}`}
             className="absolute transition-all duration-700 ease-linear"
             style={{
-              right: `${Math.max(-10, Math.min(90 + i * 10, -10 + droneProgress * 1000))}%`, // Stay in final position
+              right: `${-10 + currentDroneProgress * 100 + i * 10}%`, // Use current progress
               top: `${20 + i * 15 + Math.sin(scrollY * 0.005 + i) * 5}%`,
-              opacity: droneProgress > 0.01 + i * 0.02 ? 1 : 0,
+              opacity: currentDroneProgress > 0.01 + i * 0.02 ? 1 : 0,
               transform: `rotate(${-10 + Math.sin(scrollY * 0.003 + i) * 5}deg)`,
             }}
           >
