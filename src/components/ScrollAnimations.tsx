@@ -6,6 +6,7 @@ const ScrollAnimations = () => {
   const [isInSolutionSection, setIsInSolutionSection] = useState(false);
   const [maxMissileProgress, setMaxMissileProgress] = useState(0);
   const [maxDroneProgress, setMaxDroneProgress] = useState(0);
+  const [currentMissileProgress, setCurrentMissileProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +33,13 @@ const ScrollAnimations = () => {
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
         setIsInSolutionSection(isVisible);
         
-        // Simple progress tracking - when solution section enters viewport
+        // Track current missile progress (no lock)
         if (rect.top < window.innerHeight) {
           const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / window.innerHeight));
-          setMaxMissileProgress(prev => Math.max(prev, progress));
+          setCurrentMissileProgress(progress);
+          setMaxMissileProgress(prev => Math.max(prev, progress)); // Keep for show condition
+        } else {
+          setCurrentMissileProgress(0); // Reset when section is not visible
         }
       }
     };
@@ -61,8 +65,8 @@ const ScrollAnimations = () => {
             className="absolute transition-all duration-300 ease-out"
             style={{
               left: `${15 + i * 25}%`,
-              bottom: `${-10 + maxMissileProgress * 120 + i * 8}%`,
-              opacity: maxMissileProgress > 0.01 + i * 0.05 ? 1 : 0,
+              bottom: `${-10 + currentMissileProgress * 120 + i * 8}%`, // Use current progress
+              opacity: currentMissileProgress > 0.01 + i * 0.05 ? 1 : 0,
               transform: `rotate(-15deg)`,
             }}
           >
