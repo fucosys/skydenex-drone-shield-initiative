@@ -154,23 +154,40 @@ const Solution = () => {
                 <div className="absolute bottom-2 right-2 text-xs text-green-300 font-mono">60×60cm</div>
               </div>
               
-              <h3 className="text-2xl font-bold mb-6 text-center text-blue-400 group-hover:text-blue-300 transition-colors">System Economics</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-400 group-hover:text-blue-300 transition-colors">Live Detection System</h3>
+              
+              {/* Real-world detection interface */}
+              <div className="relative mb-6 rounded-lg overflow-hidden border border-slate-600/30 hover:border-blue-400/50 transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/7c8aa449-4f9d-48f8-a93f-5128fca94b6e.png" 
+                  alt="SkyDenex stereo optical tracking system showing real-time UAV drone detection with crosshair targeting" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-3 left-3 bg-black/80 px-3 py-1 rounded-md">
+                  <span className="text-green-400 text-sm font-mono">ACTIVE TRACKING</span>
+                </div>
+                <div className="absolute top-3 right-3 bg-red-600/90 px-3 py-1 rounded-md">
+                  <span className="text-white text-sm font-mono">TARGET ACQUIRED</span>
+                </div>
+              </div>
+
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
-                  <span className="text-gray-300">Cost vs Traditional Systems</span>
-                  <span className="text-green-400 font-bold">3x Cheaper</span>
+                  <span className="text-gray-300">Detection Range</span>
+                  <span className="text-green-400 font-bold">2km+</span>
                 </div>
-                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
-                  <span className="text-gray-300">Reusable Platform</span>
-                  <span className="text-blue-400 font-bold">100%</span>
+                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-blue-400/50 transition-all duration-300 hover:bg-slate-700/50">
+                  <span className="text-gray-300">Tracking Precision</span>
+                  <span className="text-blue-400 font-bold">≤10cm</span>
                 </div>
-                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
-                  <span className="text-gray-300">Mission Ready</span>
-                  <span className="text-purple-400 font-bold">24/7</span>
+                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-purple-400/50 transition-all duration-300 hover:bg-slate-700/50">
+                  <span className="text-gray-300">Response Time</span>
+                  <span className="text-purple-400 font-bold">&lt;3 sec</span>
                 </div>
-                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
-                  <span className="text-gray-300">Deployment Time</span>
-                  <span className="text-cyan-400 font-bold">&lt;15 min</span>
+                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-cyan-400/50 transition-all duration-300 hover:bg-slate-700/50">
+                  <span className="text-gray-300">Cost vs Traditional</span>
+                  <span className="text-cyan-400 font-bold">3x Cheaper</span>
                 </div>
               </div>
             </div>
