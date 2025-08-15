@@ -2,10 +2,19 @@ import { useEffect, useState } from 'react';
 
 const ScrollAnimations = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isInProblemSection, setIsInProblemSection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      
+      // Check if we're in the Problem section
+      const problemSection = document.getElementById('problem');
+      if (problemSection) {
+        const rect = problemSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        setIsInProblemSection(isVisible);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -15,19 +24,13 @@ const ScrollAnimations = () => {
     };
   }, []);
 
-  const progress = Math.min(scrollY / 2000, 1);
+  // Only show animations when in problem section
+  if (!isInProblemSection) {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-      {/* Defense grid background */}
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `radial-gradient(circle at ${50 + Math.sin(scrollY * 0.001) * 10}% ${50 + Math.cos(scrollY * 0.0015) * 10}%, rgba(59, 130, 246, 0.3) 0%, transparent 70%)`,
-          transform: `scale(${1 + progress * 0.2})`,
-        }}
-      />
-
       {/* Interceptor missiles launching */}
       {[...Array(3)].map((_, i) => (
         <div
@@ -70,58 +73,6 @@ const ScrollAnimations = () => {
           </div>
         </div>
       ))}
-
-      {/* Interception effects */}
-      {scrollY > 500 && (
-        <>
-          {/* Radar sweeps */}
-          <div 
-            className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-green-400 border-dashed rounded-full animate-spin opacity-40"
-            style={{
-              animationDuration: '4s',
-              transform: `scale(${1 + Math.sin(scrollY * 0.01) * 0.2})`,
-            }}
-          />
-          
-          {/* Target locks */}
-          {[...Array(2)].map((_, i) => (
-            <div
-              key={`lock-${i}`}
-              className="absolute animate-pulse"
-              style={{
-                right: `${30 + i * 20}%`,
-                top: `${40 + i * 10}%`,
-                opacity: scrollY > 600 + i * 100 ? 0.8 : 0,
-              }}
-            >
-              <div className="w-8 h-8 border-2 border-yellow-400 rounded-full relative">
-                <div className="absolute inset-2 border border-yellow-300 rounded-full"></div>
-                <div className="absolute inset-3 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-              </div>
-            </div>
-          ))}
-
-          {/* Impact flashes */}
-          {scrollY > 800 && (
-            <div 
-              className="absolute top-1/3 right-1/3 w-6 h-6 bg-yellow-300 rounded-full animate-ping opacity-60"
-              style={{
-                animationDuration: '1s',
-                boxShadow: '0 0 20px rgba(255, 255, 0, 0.8)',
-              }}
-            />
-          )}
-        </>
-      )}
-
-      {/* Success indicators */}
-      {scrollY > 1000 && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="text-green-400 font-bold text-xl animate-pulse opacity-70">
-            THREATS NEUTRALIZED
-          </div>
-        </div>
-      )}
     </div>
   );
 };
