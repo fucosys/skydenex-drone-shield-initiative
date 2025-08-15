@@ -31,7 +31,7 @@ const ScrollAnimations = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-      {/* Interceptor missiles launching */}
+      {/* Interceptor missiles launching - delayed to hit drones */}
       {[...Array(3)].map((_, i) => (
         <div
           key={`interceptor-${i}`}
@@ -39,7 +39,7 @@ const ScrollAnimations = () => {
           style={{
             left: `${15 + i * 25}%`,
             bottom: `${-20 + Math.min(scrollY * 0.15, 120)}%`,
-            opacity: scrollY > 100 + i * 100 ? 1 : 0,
+            opacity: scrollY > 250 + i * 100 ? 1 : 0, // Delayed to intercept drones
             transform: `rotate(-15deg)`,
           }}
         >
