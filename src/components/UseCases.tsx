@@ -159,29 +159,6 @@ const UseCases = () => {
           </div>
         </div>
 
-        {/* Market Opportunity */}
-        <div className={`mt-20 transition-all duration-1000 delay-700 ${fadeInClass}`}>
-          <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8 backdrop-blur-sm">
-            <h3 className="text-2xl font-bold mb-8 text-center text-purple-400">Market Opportunity</h3>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div className="space-y-2">
-                <div className="text-3xl font-bold text-blue-400 animate-pulse">€3.5-5.4B</div>
-                <div className="text-gray-300">Civil Market 2024</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl font-bold text-red-400 animate-pulse">€3.4B</div>
-                <div className="text-gray-300">Defense Market 2024</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-3xl font-bold text-green-400 animate-pulse">&gt;€20B</div>
-                <div className="text-gray-300">Combined by 2033</div>
-              </div>
-            </div>
-            <p className="text-center text-gray-400 mt-6">
-              Growing at 21-28% CAGR with our initial SOM of €75-225M over five years
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

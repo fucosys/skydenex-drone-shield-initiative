@@ -46,9 +46,40 @@ const Solution = () => {
               The <span className="text-blue-500">SkyDenex μ-System</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              A compact 60 × 60 cm turreted platform that operates on a simple but powerful principle: 
+              A compact autonomous defense platform that operates on a simple but powerful principle: 
               <strong className="text-blue-400"> Detect, Aim, Neutralize.</strong>
             </p>
+          </div>
+        </div>
+
+        {/* Visual Demo Section */}
+        <div className={`transition-all duration-1000 delay-200 ${fadeInClass}`}>
+          <div className="relative mb-16">
+            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-2xl p-8 backdrop-blur-sm">
+              <div className="grid lg:grid-cols-3 gap-8 items-center">
+                <div className="text-center group hover:scale-110 transition-all duration-500">
+                  <div className="w-24 h-24 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/40 group-hover:rotate-12 transition-all duration-300">
+                    <Eye className="h-12 w-12 text-blue-400 group-hover:animate-pulse" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-300 mb-2">Detect</h3>
+                  <p className="text-gray-400 text-sm">AI vision identifies threats</p>
+                </div>
+                <div className="text-center group hover:scale-110 transition-all duration-500">
+                  <div className="w-24 h-24 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600/40 group-hover:rotate-12 transition-all duration-300">
+                    <Target className="h-12 w-12 text-purple-400 group-hover:animate-spin" />
+                  </div>
+                  <h3 className="text-xl font-bold text-purple-300 mb-2">Aim</h3>
+                  <p className="text-gray-400 text-sm">Precision tracking & targeting</p>
+                </div>
+                <div className="text-center group hover:scale-110 transition-all duration-500">
+                  <div className="w-24 h-24 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600/40 group-hover:rotate-12 transition-all duration-300">
+                    <Shield className="h-12 w-12 text-green-400 group-hover:animate-bounce" />
+                  </div>
+                  <h3 className="text-xl font-bold text-green-300 mb-2">Neutralize</h3>
+                  <p className="text-gray-400 text-sm">Safe net capture system</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -82,28 +113,37 @@ const Solution = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-            <h3 className="text-2xl font-bold mb-6 text-center text-purple-400">System Capabilities</h3>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-purple-400/50 transition-colors duration-300">
-                <span className="text-gray-300">Platform Size</span>
-                <span className="text-purple-400 font-semibold">Compact</span>
+          <div className="relative group">
+            {/* Placeholder image container */}
+            <div className="bg-gradient-to-br from-slate-700/50 to-slate-600/50 border border-slate-500/50 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
+              <div className="aspect-video bg-gradient-to-br from-blue-900/30 to-purple-900/30 rounded-xl mb-6 flex items-center justify-center border border-blue-500/20">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                    <Zap className="h-8 w-8 text-blue-400" />
+                  </div>
+                  <p className="text-blue-300 font-medium">SkyDenex μ-System</p>
+                  <p className="text-gray-400 text-sm">Interactive Demo Coming Soon</p>
+                </div>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-blue-400/50 transition-colors duration-300">
-                <span className="text-gray-300">Tracking Precision</span>
-                <span className="text-blue-400 font-semibold">High Precision</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-green-400/50 transition-colors duration-300">
-                <span className="text-gray-300">Operation</span>
-                <span className="text-green-400 font-semibold">Fully Autonomous</span>
-              </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-green-400/50 transition-colors duration-300">
-                <span className="text-gray-300">Neutralization</span>
-                <span className="text-green-400 font-semibold">Non-Explosive</span>
-              </div>
-              <div className="flex justify-between items-center py-2 hover:border-green-400/50 transition-colors duration-300">
-                <span className="text-gray-300">Collateral Risk</span>
-                <span className="text-green-400 font-semibold">Zero</span>
+              
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-400 group-hover:text-blue-300 transition-colors">System Economics</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
+                  <span className="text-gray-300">Cost vs Traditional Systems</span>
+                  <span className="text-green-400 font-bold">3x Cheaper</span>
+                </div>
+                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
+                  <span className="text-gray-300">Reusable Platform</span>
+                  <span className="text-blue-400 font-bold">100%</span>
+                </div>
+                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
+                  <span className="text-gray-300">Mission Ready</span>
+                  <span className="text-purple-400 font-bold">24/7</span>
+                </div>
+                <div className="flex justify-between items-center py-3 px-4 bg-slate-800/50 rounded-lg border border-slate-600/30 hover:border-green-400/50 transition-all duration-300 hover:bg-slate-700/50">
+                  <span className="text-gray-300">Deployment Time</span>
+                  <span className="text-cyan-400 font-bold">&lt;15 min</span>
+                </div>
               </div>
             </div>
           </div>

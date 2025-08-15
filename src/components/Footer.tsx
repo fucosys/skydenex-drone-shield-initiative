@@ -57,7 +57,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center text-gray-400">
                 <MapPin className="h-4 w-4 mr-2" />
-                <span className="text-sm">European Defense Tech Hub</span>
+                <span className="text-sm">Czech Republic, Prague</span>
               </div>
               <a 
                 href="mailto:info@skydenex.com" 
