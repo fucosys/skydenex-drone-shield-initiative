@@ -43,7 +43,7 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Interest Areas */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="bg-gradient-to-br from-blue-900/60 to-cyan-900/60 border-blue-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/90 to-blue-900/90 border-blue-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
                 <Building className="h-8 w-8 text-blue-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">Enterprise Solutions</h3>
@@ -51,7 +51,7 @@ const Contact = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-green-900/60 to-emerald-900/60 border-green-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/90 to-green-900/90 border-green-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
                 <Users className="h-8 w-8 text-green-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">Investment</h3>
@@ -59,7 +59,7 @@ const Contact = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-purple-900/60 to-violet-900/60 border-purple-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/90 to-purple-900/90 border-purple-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
                 <Mail className="h-8 w-8 text-purple-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">General Inquiry</h3>
