@@ -120,7 +120,6 @@ const Solution = () => {
                     <Zap className="h-8 w-8 text-blue-400" />
                   </div>
                   <p className="text-blue-300 font-medium">SkyDenex μ-System</p>
-                  <p className="text-gray-400 text-sm">Interactive Demo Coming Soon</p>
                 </div>
               </div>
               
