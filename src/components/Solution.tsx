@@ -52,117 +52,63 @@ const Solution = () => {
           </div>
         </div>
 
-        {/* Three Key Areas */}
-        <div className={`grid md:grid-cols-3 gap-8 mb-16 transition-all duration-1000 delay-300 ${fadeInClass}`}>
-          <Card className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-500/20 backdrop-blur-sm group hover:scale-105 transition-transform duration-300">
-            <CardContent className="p-8 text-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/30 transition-colors">
-                  <Eye className="h-8 w-8 text-blue-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-blue-300 mb-4">AI-Powered Classification</h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Advanced computer vision processed by proprietary AI instantly distinguishes between 
-                different moving objects like birds and drones with centimeter-level precision.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20 backdrop-blur-sm group hover:scale-105 transition-transform duration-300">
-            <CardContent className="p-8 text-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600/30 transition-colors">
-                  <Shield className="h-8 w-8 text-green-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-green-300 mb-4">Non-Lethal Neutralization</h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                No explosives. We launch a 37 cm μ-missile that deploys a 20 m² net, physically 
-                capturing the drone and safely landing it with a parachute.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-br from-purple-900/20 to-violet-900/20 border-purple-500/20 backdrop-blur-sm group hover:scale-105 transition-transform duration-300">
-            <CardContent className="p-8 text-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600/30 transition-colors">
-                  <Zap className="h-8 w-8 text-purple-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-purple-300 mb-4">Autonomous Operation</h3>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Completely autonomous system removes human reaction time as a bottleneck and 
-                allows for truly scalable defense that grows better with multiple units.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Technical Specifications */}
-        <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 delay-500 ${fadeInClass}`}>
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8 backdrop-blur-sm">
-              <h3 className="text-2xl font-bold mb-6 text-blue-400">Technical Specifications</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
-                  <span className="text-gray-300">Platform Size</span>
-                  <span className="text-blue-400 font-semibold">60 × 60 cm</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
-                  <span className="text-gray-300">Tracking Precision</span>
-                  <span className="text-blue-400 font-semibold">≤ 10 cm</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
-                  <span className="text-gray-300">Missile Length</span>
-                  <span className="text-blue-400 font-semibold">37 cm</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
-                  <span className="text-gray-300">Net Coverage</span>
-                  <span className="text-blue-400 font-semibold">20 m²</span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
-                  <span className="text-gray-300">Maneuver Authority</span>
-                  <span className="text-blue-400 font-semibold">>5 Gs</span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-gray-300">Cost per Missile</span>
-                  <span className="text-green-400 font-semibold">€160</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        {/* System Overview */}
+        <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 delay-300 ${fadeInClass}`}>
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-xl p-8 backdrop-blur-sm">
-              <div className="flex items-center mb-4">
-                <Target className="h-8 w-8 text-blue-400" />
-                <h4 className="text-xl font-semibold ml-3 text-blue-300">Autonomous Detection & Tracking</h4>
-              </div>
-              <p className="text-gray-300 mb-4">
-                AI-driven stereo cameras with edge processing using Jetson Orin and advanced CNN algorithms.
+            <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+              <h3 className="text-2xl font-bold mb-6 text-blue-400">Compact & Powerful</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                The SkyDenex μ-System fits in a 60 × 60 cm footprint while delivering 
+                enterprise-grade autonomous drone defense capabilities.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>• Passive stereo camera system</li>
-                <li>• RF-independent operation</li>
-                <li>• Real-time threat classification</li>
+                <li>• Plug-and-play integration</li>
+                <li>• Open architecture with REST API</li>
+                <li>• ROS 2/STANAG-4586 compliance</li>
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-green-900/30 to-blue-900/30 border border-green-500/30 rounded-xl p-8 backdrop-blur-sm">
-              <h4 className="text-xl font-semibold mb-4 text-green-300">Network Integration</h4>
-              <p className="text-gray-300 mb-4">
-                Multiple turrets create a cooperative anti-UAS "bubble" with sensor fusion capabilities.
+            <div className="bg-gradient-to-br from-green-900/30 to-blue-900/30 border border-green-500/30 rounded-xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+              <h3 className="text-2xl font-bold mb-6 text-green-400">Multi-Platform Ready</h3>
+              <p className="text-gray-300 mb-4 leading-relaxed">
+                Mountable on vehicles, vessels, or fixed installations. Multiple units create 
+                a cooperative anti-UAS "bubble" with sensor fusion.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>• REST API integration</li>
-                <li>• ROS 2/STANAG-4586 compliance</li>
-                <li>• Distributed computing cloud</li>
+                <li>• Vehicle convoy protection</li>
+                <li>• Naval deck defense</li>
+                <li>• Fixed site perimeter security</li>
               </ul>
             </div>
           </div>
+
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+            <h3 className="text-2xl font-bold mb-6 text-center text-purple-400">System Capabilities</h3>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                <span className="text-gray-300">Platform Size</span>
+                <span className="text-purple-400 font-semibold">60 × 60 cm</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                <span className="text-gray-300">Tracking Precision</span>
+                <span className="text-blue-400 font-semibold">≤ 10 cm</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                <span className="text-gray-300">Operation</span>
+                <span className="text-green-400 font-semibold">Fully Autonomous</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                <span className="text-gray-300">Neutralization</span>
+                <span className="text-green-400 font-semibold">Non-Explosive</span>
+              </div>
+              <div className="flex justify-between items-center py-2">
+                <span className="text-gray-300">Collateral Risk</span>
+                <span className="text-green-400 font-semibold">Zero</span>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   );

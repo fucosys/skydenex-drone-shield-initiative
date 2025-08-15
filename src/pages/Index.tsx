@@ -4,8 +4,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
+import CoreCapabilities from "@/components/CoreCapabilities";
 import Technology from "@/components/Technology";
-import Market from "@/components/Market";
+import UseCases from "@/components/UseCases";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -38,11 +39,12 @@ const Index = () => {
       <div ref={solutionRef}>
         <Solution />
       </div>
+      <CoreCapabilities />
       <div ref={technologyRef}>
         <Technology />
       </div>
       <div ref={marketRef}>
-        <Market />
+        <UseCases />
       </div>
       <div ref={contactRef}>
         <Contact />
