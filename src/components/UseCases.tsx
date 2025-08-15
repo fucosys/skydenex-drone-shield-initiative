@@ -90,32 +90,32 @@ const UseCases = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Civil Sector */}
           <div className={`transition-all duration-1000 delay-300 ${fadeInClass}`}>
-            <div className="bg-gradient-to-br from-blue-900/30 to-green-900/30 border border-blue-500/30 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-500">
-              <h3 className="text-2xl font-bold mb-8 text-center text-blue-400 flex items-center justify-center">
-                <Building2 className="h-8 w-8 mr-3" />
+            <div className="bg-gradient-to-br from-blue-900/30 to-green-900/30 border border-blue-500/30 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 group">
+              <h3 className="text-2xl font-bold mb-8 text-center text-blue-400 flex items-center justify-center group-hover:text-blue-300 transition-colors">
+                <Building2 className="h-8 w-8 mr-3 group-hover:animate-pulse" />
                 Civil Sector
               </h3>
               <div className="space-y-6">
                 {civilUseCases.map((useCase, index) => (
                   <Card 
                     key={index} 
-                    className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 hover:scale-102"
+                    className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300"
                   >
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="p-3 rounded-full bg-slate-700/50">
+                        <div className="p-3 rounded-full bg-slate-700/50 hover:bg-slate-600/50 transition-colors">
                           {useCase.icon}
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold mb-2 text-white">{useCase.title}</h4>
-                          <p className="text-gray-300 text-sm">{useCase.description}</p>
+                          <h4 className="text-lg font-semibold mb-2 text-white hover:text-blue-300 transition-colors">{useCase.title}</h4>
+                          <p className="text-gray-300 text-sm hover:text-gray-200 transition-colors">{useCase.description}</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-green-600/10 border border-green-500/20 rounded-lg">
+              <div className="mt-6 p-4 bg-green-600/10 border border-green-500/20 rounded-lg hover:bg-green-600/20 transition-colors">
                 <p className="text-sm text-green-300 text-center">
                   <strong>Key Advantage:</strong> Non-explosive net intercept is the only hard-kill option permissible over populated areas
                 </p>
@@ -125,32 +125,32 @@ const UseCases = () => {
 
           {/* Defense Sector */}
           <div className={`transition-all duration-1000 delay-500 ${fadeInClass}`}>
-            <div className="bg-gradient-to-br from-red-900/30 to-orange-900/30 border border-red-500/30 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-500">
-              <h3 className="text-2xl font-bold mb-8 text-center text-red-400 flex items-center justify-center">
-                <Shield className="h-8 w-8 mr-3" />
+            <div className="bg-gradient-to-br from-red-900/30 to-orange-900/30 border border-red-500/30 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-500 group">
+              <h3 className="text-2xl font-bold mb-8 text-center text-red-400 flex items-center justify-center group-hover:text-red-300 transition-colors">
+                <Shield className="h-8 w-8 mr-3 group-hover:animate-bounce" />
                 Defense & Security
               </h3>
               <div className="space-y-6">
                 {defenseUseCases.map((useCase, index) => (
                   <Card 
                     key={index} 
-                    className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 hover:scale-102"
+                    className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:bg-slate-800/70 hover:scale-105 hover:shadow-lg hover:shadow-red-500/10 transition-all duration-300"
                   >
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
-                        <div className="p-3 rounded-full bg-slate-700/50">
+                        <div className="p-3 rounded-full bg-slate-700/50 hover:bg-slate-600/50 transition-colors">
                           {useCase.icon}
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold mb-2 text-white">{useCase.title}</h4>
-                          <p className="text-gray-300 text-sm">{useCase.description}</p>
+                          <h4 className="text-lg font-semibold mb-2 text-white hover:text-red-300 transition-colors">{useCase.title}</h4>
+                          <p className="text-gray-300 text-sm hover:text-gray-200 transition-colors">{useCase.description}</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-red-600/10 border border-red-500/20 rounded-lg">
+              <div className="mt-6 p-4 bg-red-600/10 border border-red-500/20 rounded-lg hover:bg-red-600/20 transition-colors">
                 <p className="text-sm text-red-300 text-center">
                   <strong>Key Advantage:</strong> Defeats RF-hardened and fiber-optic drones immune to jamming
                 </p>

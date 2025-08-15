@@ -16,28 +16,23 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background - Upload your video to public/ folder and update the src path */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Replace the gradient with your video when ready */}
-        <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 animate-pulse">
-          {/* 
-          To add your video:
-          1. Upload video to public/hero-background.mp4 
-          2. Replace this div with:
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover pointer-events-none"
-            style={{ pointerEvents: 'none' }}
-          >
-            <source src="/hero-background.mp4" type="video/mp4" />
-          </video>
-          */}
-        </div>
-        {/* Dark overlay for better text readability - adjust opacity as needed */}
-        <div className="absolute inset-0 bg-black/70"></div>
+      {/* Video Background - Non-clickable background video */}
+      <div className="absolute inset-0 z-0">
+        {/* Video will be placed here - using gradient placeholder for now */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ pointerEvents: 'none' }}
+        >
+          <source src="/hero-background.mp4" type="video/mp4" />
+          {/* Fallback gradient if video fails to load */}
+          <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
       
       {/* Animated grid pattern */}
@@ -101,19 +96,25 @@ const Hero = () => {
               </Button>
             </div>
             
-            {/* Key metrics */}
+            {/* Key metrics with enhanced animations */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
-              <div className="text-center hover:scale-110 transition-transform duration-300">
-                <div className="text-3xl font-bold text-blue-400 mb-2 animate-pulse">≤10cm</div>
-                <div className="text-gray-300">Tracking Precision</div>
+              <div className="text-center group">
+                <div className="transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-3">
+                  <div className="text-3xl font-bold text-blue-400 mb-2 animate-pulse">≤10cm</div>
+                  <div className="text-gray-300 transition-colors duration-300 group-hover:text-blue-300">Tracking Precision</div>
+                </div>
               </div>
-              <div className="text-center hover:scale-110 transition-transform duration-300">
-                <div className="text-3xl font-bold text-green-400 mb-2 animate-pulse">100%</div>
-                <div className="text-gray-300">Autonomous</div>
+              <div className="text-center group">
+                <div className="transform transition-all duration-500 group-hover:scale-125 group-hover:-rotate-3">
+                  <div className="text-3xl font-bold text-green-400 mb-2 animate-pulse">100%</div>
+                  <div className="text-gray-300 transition-colors duration-300 group-hover:text-green-300">Autonomous</div>
+                </div>
               </div>
-              <div className="text-center hover:scale-110 transition-transform duration-300">
-                <div className="text-3xl font-bold text-purple-400 mb-2 animate-pulse">0%</div>
-                <div className="text-gray-300">Collateral Damage</div>
+              <div className="text-center group">
+                <div className="transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-3">
+                  <div className="text-3xl font-bold text-purple-400 mb-2 animate-pulse">0%</div>
+                  <div className="text-gray-300 transition-colors duration-300 group-hover:text-purple-300">Collateral Damage</div>
+                </div>
               </div>
             </div>
           </div>
