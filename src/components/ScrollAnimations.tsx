@@ -57,7 +57,7 @@ const ScrollAnimations = () => {
             className="absolute transition-all duration-300 ease-out"
             style={{
               left: `${15 + i * 25}%`,
-              bottom: `${-10 + solutionProgress * 130 + i * 10}%`, // Start from bottom, fly up based on solution scroll
+              bottom: `${Math.max(-10, Math.min(120, -10 + solutionProgress * 130 + i * 10))}%`, // Fly up and stay at top
               opacity: solutionProgress > 0.1 + i * 0.2 ? 1 : 0,
               transform: `rotate(-15deg)`,
             }}
