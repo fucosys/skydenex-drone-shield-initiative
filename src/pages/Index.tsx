@@ -9,6 +9,7 @@ import Technology from "@/components/Technology";
 import UseCases from "@/components/UseCases";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 const Index = () => {
   // Refs for scrolling to sections
@@ -25,6 +26,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-gray-100">
+      <ScrollAnimations />
       <Navbar 
         onProblemClick={() => scrollToSection(problemRef)}
         onSolutionClick={() => scrollToSection(solutionRef)}

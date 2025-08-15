@@ -46,24 +46,24 @@ const Contact = () => {
             <Card className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
                 <Building className="h-8 w-8 text-blue-400 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold text-blue-300 mb-2">Enterprise Solutions</h3>
-                <p className="text-sm text-gray-300">Critical infrastructure and airport security</p>
+                <h3 className="text-lg font-semibold text-white mb-2">Enterprise Solutions</h3>
+                <p className="text-sm text-gray-200">Critical infrastructure and airport security</p>
               </CardContent>
             </Card>
             
             <Card className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
                 <Users className="h-8 w-8 text-green-400 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold text-green-300 mb-2">Investment</h3>
-                <p className="text-sm text-gray-300">Partnership and funding opportunities</p>
+                <h3 className="text-lg font-semibold text-white mb-2">Investment</h3>
+                <p className="text-sm text-gray-200">Partnership and funding opportunities</p>
               </CardContent>
             </Card>
             
             <Card className="bg-gradient-to-br from-purple-900/20 to-violet-900/20 border-purple-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
                 <Mail className="h-8 w-8 text-purple-400 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold text-purple-300 mb-2">General Inquiry</h3>
-                <p className="text-sm text-gray-300">Technology questions and demos</p>
+                <h3 className="text-lg font-semibold text-white mb-2">General Inquiry</h3>
+                <p className="text-sm text-gray-200">Technology questions and demos</p>
               </CardContent>
             </Card>
           </div>
