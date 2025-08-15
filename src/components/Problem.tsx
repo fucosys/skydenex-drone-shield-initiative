@@ -48,6 +48,8 @@ const Problem = () => {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               On battlefields in Ukraine, we're witnessing a twisted form of gamification emerge. 
               Drone pilots earn points for destruction—six points for a soldier, twenty for damaging a tank, forty for destroying one.
+              Even more concerning are the "sit and wait" tactics, where kamikaze drones land near roads, turn off propellers, 
+              and wait with cameras on until vehicles approach—then slam into them with devastating effect.
             </p>
           </div>
         </div>
@@ -79,10 +81,10 @@ const Problem = () => {
           </div>
           
           <div className="space-y-6">
-            <Card className="bg-slate-800/50 border-red-500/20 backdrop-blur-sm">
+            <Card className="bg-slate-800/50 border-red-500/20 backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-red-500/20 transition-all duration-300 group">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <Target className="h-8 w-8 text-red-500" />
+                  <Target className="h-8 w-8 text-red-500 group-hover:animate-pulse" />
                   <h4 className="text-xl font-semibold ml-3 text-red-300">70-80% of Losses</h4>
                 </div>
                 <p className="text-gray-300">
@@ -92,10 +94,10 @@ const Problem = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-slate-800/50 border-orange-500/20 backdrop-blur-sm">
+            <Card className="bg-slate-800/50 border-orange-500/20 backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 group">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <TrendingUp className="h-8 w-8 text-orange-500" />
+                  <TrendingUp className="h-8 w-8 text-orange-500 group-hover:animate-bounce" />
                   <h4 className="text-xl font-semibold ml-3 text-orange-300">Exponential Growth</h4>
                 </div>
                 <p className="text-gray-300">
@@ -105,10 +107,10 @@ const Problem = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-slate-800/50 border-yellow-500/20 backdrop-blur-sm">
+            <Card className="bg-slate-800/50 border-yellow-500/20 backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 group">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
-                  <Shield className="h-8 w-8 text-yellow-500" />
+                  <Shield className="h-8 w-8 text-yellow-500 group-hover:animate-spin" />
                   <h4 className="text-xl font-semibold ml-3 text-yellow-300">Defense Gap</h4>
                 </div>
                 <p className="text-gray-300">

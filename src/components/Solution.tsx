@@ -85,23 +85,23 @@ const Solution = () => {
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
             <h3 className="text-2xl font-bold mb-6 text-center text-purple-400">System Capabilities</h3>
             <div className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-purple-400/50 transition-colors duration-300">
                 <span className="text-gray-300">Platform Size</span>
-                <span className="text-purple-400 font-semibold">60 × 60 cm</span>
+                <span className="text-purple-400 font-semibold">Compact</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-blue-400/50 transition-colors duration-300">
                 <span className="text-gray-300">Tracking Precision</span>
-                <span className="text-blue-400 font-semibold">≤ 10 cm</span>
+                <span className="text-blue-400 font-semibold">High Precision</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-green-400/50 transition-colors duration-300">
                 <span className="text-gray-300">Operation</span>
                 <span className="text-green-400 font-semibold">Fully Autonomous</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+              <div className="flex justify-between items-center py-2 border-b border-slate-600/30 hover:border-green-400/50 transition-colors duration-300">
                 <span className="text-gray-300">Neutralization</span>
                 <span className="text-green-400 font-semibold">Non-Explosive</span>
               </div>
-              <div className="flex justify-between items-center py-2">
+              <div className="flex justify-between items-center py-2 hover:border-green-400/50 transition-colors duration-300">
                 <span className="text-gray-300">Collateral Risk</span>
                 <span className="text-green-400 font-semibold">Zero</span>
               </div>

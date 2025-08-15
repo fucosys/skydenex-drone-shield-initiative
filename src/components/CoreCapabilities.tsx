@@ -52,11 +52,11 @@ const CoreCapabilities = () => {
 
         {/* Three Key Areas */}
         <div className={`grid md:grid-cols-3 gap-8 mb-16 transition-all duration-1000 delay-300 ${fadeInClass}`}>
-          <Card className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-500/20 backdrop-blur-sm group hover:scale-110 transition-all duration-500 hover:rotate-1">
+           <Card className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-500/20 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:rotate-1">
             <CardContent className="p-8 text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
-                  <Eye className="h-8 w-8 text-blue-400 group-hover:text-blue-300" />
+                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-pulse">
+                  <Eye className="h-8 w-8 text-blue-400 group-hover:text-blue-300 group-hover:animate-pulse" />
                 </div>
                 <h3 className="text-2xl font-bold text-blue-300 mb-4 group-hover:text-blue-200 transition-colors">AI-Powered Classification</h3>
               </div>
@@ -67,11 +67,11 @@ const CoreCapabilities = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20 backdrop-blur-sm group hover:scale-110 transition-all duration-500 hover:rotate-1">
+          <Card className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 hover:rotate-1">
             <CardContent className="p-8 text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
-                  <Shield className="h-8 w-8 text-green-400 group-hover:text-green-300" />
+                <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-bounce">
+                  <Shield className="h-8 w-8 text-green-400 group-hover:text-green-300 group-hover:animate-bounce" />
                 </div>
                 <h3 className="text-2xl font-bold text-green-300 mb-4 group-hover:text-green-200 transition-colors">Non-Lethal Neutralization</h3>
               </div>
@@ -82,11 +82,11 @@ const CoreCapabilities = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-purple-900/20 to-violet-900/20 border-purple-500/20 backdrop-blur-sm group hover:scale-110 transition-all duration-500 hover:rotate-1">
+          <Card className="bg-gradient-to-br from-purple-900/20 to-violet-900/20 border-purple-500/20 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:rotate-1">
             <CardContent className="p-8 text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12">
-                  <Zap className="h-8 w-8 text-purple-400 group-hover:text-purple-300" />
+                <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-spin">
+                  <Zap className="h-8 w-8 text-purple-400 group-hover:text-purple-300 group-hover:animate-spin" />
                 </div>
                 <h3 className="text-2xl font-bold text-purple-300 mb-4 group-hover:text-purple-200 transition-colors">Autonomous Operation</h3>
               </div>
