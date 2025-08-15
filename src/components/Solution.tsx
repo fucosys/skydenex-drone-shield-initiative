@@ -87,26 +87,26 @@ const Solution = () => {
         <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 delay-300 ${fadeInClass}`}>
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-blue-400">Compact & Powerful</h3>
+              <h3 className="text-2xl font-bold mb-6 text-blue-400">Autonomous Detection</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                60 × 60 cm footprint delivering enterprise-grade autonomous defense.
+                Advanced stereo-optical system provides real-time threat identification and tracking with sub-10cm precision.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>• Plug-and-play integration</li>
-                <li>• Open architecture with REST API</li>
-                <li>• ROS 2/STANAG-4586 compliance</li>
+                <li>• 500m detection range</li>
+                <li>• Multi-spectral imaging</li>
+                <li>• AI-powered target classification</li>
               </ul>
             </div>
 
             <div className="bg-gradient-to-br from-green-900/30 to-blue-900/30 border border-green-500/30 rounded-xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-green-400">Multi-Platform Ready</h3>
+              <h3 className="text-2xl font-bold mb-6 text-green-400">Precision Neutralization</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Mountable anywhere. Multiple units create cooperative anti-UAS "bubble".
+                Non-lethal net-capture missiles ensure complete threat neutralization with zero collateral damage.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li>• Vehicle convoy protection</li>
-                <li>• Naval deck defense</li>
-                <li>• Fixed site perimeter security</li>
+                <li>• Net-capture technology</li>
+                <li>• Guided projectile system</li>
+                <li>• Reusable platform design</li>
               </ul>
             </div>
           </div>
@@ -114,9 +114,9 @@ const Solution = () => {
           <div className="relative group">
             <div className="bg-gradient-to-br from-slate-700/50 to-slate-600/50 border border-slate-500/50 rounded-2xl p-8 backdrop-blur-sm hover:scale-105 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20">
               
-              <h3 className="text-2xl font-bold mb-6 text-center text-blue-400 group-hover:text-blue-300 transition-colors">Live Detection System</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-400 group-hover:text-blue-300 transition-colors">Complete Defense Solution</h3>
               
-              {/* Real-world detection interface */}
+              {/* Detection System */}
               <div className="relative mb-6 rounded-lg overflow-hidden border border-slate-600/30 hover:border-blue-400/50 transition-all duration-300">
                 <img 
                   src="/lovable-uploads/7c8aa449-4f9d-48f8-a93f-5128fca94b6e.png" 
@@ -129,6 +129,23 @@ const Solution = () => {
                 </div>
                 <div className="absolute top-3 right-3 bg-red-600/90 px-3 py-1 rounded-md">
                   <span className="text-white text-sm font-mono">TARGET ACQUIRED</span>
+                </div>
+              </div>
+
+              {/* Missile System */}
+              <div className="relative mb-6 rounded-lg overflow-hidden border border-orange-500/30 hover:border-orange-400/50 transition-all duration-300 bg-gradient-to-br from-slate-800/50 to-orange-900/20 p-6">
+                <div className="flex items-center justify-center">
+                  <img 
+                    src="/lovable-uploads/58adfdd4-ba3d-445e-b181-321e57f5fc04.png" 
+                    alt="SkyDenex net-capture missile for non-lethal drone neutralization" 
+                    className="w-full max-w-md h-auto object-contain"
+                  />
+                </div>
+                <div className="absolute bottom-3 left-3 bg-orange-600/90 px-3 py-1 rounded-md">
+                  <span className="text-white text-sm font-mono">NET-CAPTURE MISSILE</span>
+                </div>
+                <div className="absolute top-3 right-3 bg-green-600/90 px-3 py-1 rounded-md">
+                  <span className="text-white text-sm font-mono">NON-LETHAL</span>
                 </div>
               </div>
 
