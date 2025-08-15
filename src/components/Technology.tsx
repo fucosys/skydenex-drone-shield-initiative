@@ -52,8 +52,8 @@ const Technology = () => {
     {
       icon: <Brain className="h-12 w-12 text-purple-500" />,
       title: "Superior Attrition Economics",
-      description: "Breaking the costly attrition paradigm where expensive interceptor drones are destroyed in every engagement. Reusable launcher with mass-manufacturable €160 missiles provides sustainable economics.",
-      highlight: "€160 per Shot"
+      description: "Breaking the costly attrition paradigm. Reusable launcher with mass-manufacturable missiles provides sustainable economics.",
+      highlight: "3x Cheaper than Drone"
     },
     {
       icon: <Network className="h-12 w-12 text-cyan-500" />,

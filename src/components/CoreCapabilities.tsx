@@ -61,8 +61,7 @@ const CoreCapabilities = () => {
                 <h3 className="text-2xl font-bold text-blue-100 mb-4 group-hover:text-white transition-colors">AI-Powered Classification</h3>
               </div>
               <p className="text-blue-50 leading-relaxed group-hover:text-white transition-colors">
-                Advanced computer vision processed by proprietary AI instantly distinguishes between 
-                different moving objects like birds and drones with centimeter-level precision.
+                AI-powered computer vision instantly distinguishes birds from drones with centimeter precision.
               </p>
             </CardContent>
           </Card>
@@ -76,8 +75,7 @@ const CoreCapabilities = () => {
                 <h3 className="text-2xl font-bold text-green-100 mb-4 group-hover:text-white transition-colors">Non-Lethal Neutralization</h3>
               </div>
               <p className="text-green-50 leading-relaxed group-hover:text-white transition-colors">
-                No explosives. We launch a precision missile that deploys a large net, physically 
-                capturing the drone and safely landing it with a parachute.
+                No explosives. Precision missile deploys net, captures drone, lands safely with parachute.
               </p>
             </CardContent>
           </Card>
@@ -91,8 +89,7 @@ const CoreCapabilities = () => {
                 <h3 className="text-2xl font-bold text-purple-100 mb-4 group-hover:text-white transition-colors">Autonomous Operation</h3>
               </div>
               <p className="text-purple-50 leading-relaxed group-hover:text-white transition-colors">
-                Completely autonomous system removes human reaction time as a bottleneck and 
-                allows for truly scalable defense that grows better with multiple units.
+                Removes human reaction time. Truly scalable defense that improves with multiple units.
               </p>
             </CardContent>
           </Card>
