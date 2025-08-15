@@ -38,7 +38,7 @@ const ScrollAnimations = () => {
           className="absolute transition-all duration-500 ease-out"
           style={{
             left: `${15 + i * 25}%`,
-            bottom: `${-20 + Math.min(scrollY * 0.15, 120)}%`,
+            bottom: `${-20 + Math.min(scrollY * 0.08, 80)}%`, // Slower movement to chase drones
             opacity: scrollY > 400 + i * 150 ? 1 : 0, // Further delayed to intercept drones mid-flight
             transform: `rotate(-15deg)`,
           }}
