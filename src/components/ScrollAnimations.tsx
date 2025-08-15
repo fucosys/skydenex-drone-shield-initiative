@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 const ScrollAnimations = () => {
   const [scrollY, setScrollY] = useState(0);
   const [isInProblemSection, setIsInProblemSection] = useState(false);
+  const [isInSolutionSection, setIsInSolutionSection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,14 @@ const ScrollAnimations = () => {
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
         setIsInProblemSection(isVisible);
       }
+
+      // Check if we're in the Solution section  
+      const solutionSection = document.getElementById('solution');
+      if (solutionSection) {
+        const rect = solutionSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        setIsInSolutionSection(isVisible);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -24,22 +33,21 @@ const ScrollAnimations = () => {
     };
   }, []);
 
-  // Only show animations when in problem section
-  if (!isInProblemSection) {
-    return null;
-  }
+  // Show drones during problem section, missiles during solution section
+  const showDrones = isInProblemSection;
+  const showMissiles = isInSolutionSection;
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-      {/* Interceptor missiles launching - delayed to hit drones */}
-      {[...Array(3)].map((_, i) => (
+      {/* Interceptor missiles launching - only during solution section */}
+      {showMissiles && [...Array(3)].map((_, i) => (
         <div
           key={`interceptor-${i}`}
           className="absolute transition-all duration-500 ease-out"
           style={{
             left: `${15 + i * 25}%`,
-            bottom: `${-20 + Math.min(scrollY * 0.08, 120)}%`, // Slower movement but reaches top
-            opacity: scrollY > 400 + i * 150 ? 1 : 0, // Further delayed to intercept drones mid-flight
+            bottom: `${-20 + Math.min(scrollY * 0.08, 120)}%`,
+            opacity: scrollY > 400 + i * 150 ? 1 : 0,
             transform: `rotate(-15deg)`,
           }}
         >
@@ -52,8 +60,8 @@ const ScrollAnimations = () => {
         </div>
       ))}
 
-      {/* Threat drones incoming */}
-      {[...Array(4)].map((_, i) => (
+      {/* Threat drones incoming - only during problem section */}
+      {showDrones && [...Array(4)].map((_, i) => (
         <div
           key={`threat-${i}`}
           className="absolute transition-all duration-700 ease-linear"
