@@ -25,12 +25,10 @@ const ScrollAnimations = () => {
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
         setIsInSolutionSection(isVisible);
         
-        // Track max missile progress to keep them at top
-        if (isVisible && rect.height > 0) {
-          const sectionHeight = rect.height;
-          const scrolledIntoView = Math.max(0, window.innerHeight - rect.top);
-          const currentProgress = Math.min(1, scrolledIntoView / sectionHeight);
-          setMaxMissileProgress(prev => Math.max(prev, currentProgress));
+        // Simple progress tracking - when solution section enters viewport
+        if (rect.top < window.innerHeight) {
+          const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / window.innerHeight));
+          setMaxMissileProgress(prev => Math.max(prev, progress));
         }
       }
     };
@@ -56,8 +54,8 @@ const ScrollAnimations = () => {
             className="absolute transition-all duration-300 ease-out"
             style={{
               left: `${15 + i * 25}%`,
-              bottom: `${-10 + maxMissileProgress * 130 + i * 10}%`,
-              opacity: maxMissileProgress > 0.05 + i * 0.1 ? 1 : 0,
+              bottom: `${-10 + maxMissileProgress * 120 + i * 8}%`,
+              opacity: maxMissileProgress > 0.01 + i * 0.05 ? 1 : 0,
               transform: `rotate(-15deg)`,
             }}
           >
