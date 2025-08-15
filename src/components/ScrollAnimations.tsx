@@ -40,25 +40,37 @@ const ScrollAnimations = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
       {/* Interceptor missiles launching - only during solution section */}
-      {showMissiles && [...Array(3)].map((_, i) => (
-        <div
-          key={`interceptor-${i}`}
-          className="absolute transition-all duration-500 ease-out"
-          style={{
-            left: `${15 + i * 25}%`,
-            bottom: `${-20 + Math.min(scrollY * 0.08, 120)}%`,
-            opacity: scrollY > 400 + i * 150 ? 1 : 0,
-            transform: `rotate(-15deg)`,
-          }}
-        >
-          <div className="relative">
-            {/* Missile body */}
-            <div className="w-1 h-8 bg-gradient-to-t from-slate-400 to-slate-200 rounded-full"></div>
-            {/* Exhaust trail */}
-            <div className="absolute top-8 left-0 w-1 h-12 bg-gradient-to-t from-orange-500 via-yellow-400 to-transparent opacity-80 animate-pulse"></div>
+      {showMissiles && [...Array(3)].map((_, i) => {
+        const solutionSection = document.getElementById('solution');
+        let solutionProgress = 0;
+        
+        if (solutionSection) {
+          const rect = solutionSection.getBoundingClientRect();
+          const sectionHeight = rect.height;
+          const visibleHeight = Math.min(window.innerHeight, rect.bottom) - Math.max(0, rect.top);
+          solutionProgress = Math.max(0, visibleHeight / sectionHeight);
+        }
+        
+        return (
+          <div
+            key={`interceptor-${i}`}
+            className="absolute transition-all duration-300 ease-out"
+            style={{
+              left: `${15 + i * 25}%`,
+              bottom: `${-10 + solutionProgress * 130 + i * 10}%`, // Start from bottom, fly up based on solution scroll
+              opacity: solutionProgress > 0.1 + i * 0.2 ? 1 : 0,
+              transform: `rotate(-15deg)`,
+            }}
+          >
+            <div className="relative">
+              {/* Missile body */}
+              <div className="w-1 h-8 bg-gradient-to-t from-slate-400 to-slate-200 rounded-full"></div>
+              {/* Exhaust trail */}
+              <div className="absolute top-8 left-0 w-1 h-12 bg-gradient-to-t from-orange-500 via-yellow-400 to-transparent opacity-80 animate-pulse"></div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       {/* Threat drones incoming - only during problem section */}
       {showDrones && [...Array(4)].map((_, i) => (
