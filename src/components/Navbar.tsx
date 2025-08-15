@@ -5,14 +5,16 @@ import { Button } from "@/components/ui/button";
 interface NavbarProps {
   onProblemClick: () => void;
   onSolutionClick: () => void;
-  onAboutClick: () => void;
+  onTechnologyClick: () => void;
+  onMarketClick: () => void;
   onContactClick: () => void;
 }
 
 const Navbar = ({
   onProblemClick,
   onSolutionClick,
-  onAboutClick,
+  onTechnologyClick,
+  onMarketClick,
   onContactClick,
 }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +39,7 @@ const Navbar = ({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-md shadow-lg"
+          ? "bg-black/90 backdrop-blur-md shadow-lg border-b border-gray-800/50"
           : "bg-transparent"
       }`}
     >
@@ -55,36 +57,41 @@ const Navbar = ({
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8">
             <button
               onClick={onProblemClick}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 hover:text-white transition-colors font-medium"
             >
               Problem
             </button>
             <button
               onClick={onSolutionClick}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-300 hover:text-white transition-colors font-medium"
             >
               Solution
             </button>
             <button
-              onClick={onAboutClick}
-              className="text-gray-300 hover:text-white transition-colors"
+              onClick={onTechnologyClick}
+              className="text-gray-300 hover:text-white transition-colors font-medium"
             >
-              About Us
+              Technology
+            </button>
+            <button
+              onClick={onMarketClick}
+              className="text-gray-300 hover:text-white transition-colors font-medium"
+            >
+              Market
             </button>
             <Button
               onClick={onContactClick}
-              variant="outline"
-              className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
             >
-              Contact
+              Contact Us
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Button
               variant="ghost"
               className="text-gray-300"
@@ -114,7 +121,7 @@ const Navbar = ({
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-2 bg-gray-900 rounded-lg animate-fade-in">
+          <div className="lg:hidden mt-4 py-2 bg-gray-900/95 backdrop-blur-md rounded-lg animate-fade-in border border-gray-800/50">
             <div className="flex flex-col space-y-3 p-2">
               <button
                 onClick={() => {
@@ -136,12 +143,21 @@ const Navbar = ({
               </button>
               <button
                 onClick={() => {
-                  onAboutClick();
+                  onTechnologyClick();
                   setIsMobileMenuOpen(false);
                 }}
                 className="px-4 py-2 text-left text-gray-300 hover:bg-gray-800 rounded-md transition-colors"
               >
-                About Us
+                Technology
+              </button>
+              <button
+                onClick={() => {
+                  onMarketClick();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="px-4 py-2 text-left text-gray-300 hover:bg-gray-800 rounded-md transition-colors"
+              >
+                Market
               </button>
               <button
                 onClick={() => {
@@ -150,7 +166,7 @@ const Navbar = ({
                 }}
                 className="px-4 py-2 text-left text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
               >
-                Contact
+                Contact Us
               </button>
             </div>
           </div>

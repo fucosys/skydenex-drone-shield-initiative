@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,52 +15,112 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 z-0 bg-[url('/lovable-uploads/4da554b4-929c-4e0a-9107-4ca6b5b98942.png')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background - Ready for your video upload */}
+      <div className="absolute inset-0 z-0">
+        {/* Placeholder for video - replace with your video element */}
+        <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+          {/* When you upload your video, replace this div with:
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/path-to-your-video.mp4" type="video/mp4" />
+          </video>
+          */}
+        </div>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
       
-      {/* Animated lines in background */}
-      <div className="absolute inset-0 z-10">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-pulse absolute top-1/4"></div>
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-500 to-transparent animate-pulse absolute top-2/4 delay-150"></div>
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse absolute top-3/4 delay-300"></div>
+      {/* Animated grid pattern */}
+      <div className="absolute inset-0 z-10 opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px',
+          animation: 'float 20s ease-in-out infinite'
+        }}></div>
       </div>
       
-      <div className="container mx-auto px-4 z-20">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="container mx-auto px-4 z-20 relative">
+        <div className="max-w-4xl mx-auto text-center">
           <div
             className={`transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-blue-400">
-              Ensuring Europe's Defense Sovereignty
+            <div className="mb-6">
+              <span className="inline-block px-4 py-2 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-4">
+                Next-Generation Drone Defense
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-cyan-400">
+                Autonomous Defense
+              </span>
+              <br />
+              <span className="text-white">
+                Against Modern Threats
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Skydenex is revolutionizing defense against FPV kamikaze drones with our 
-              innovative non-lethal micro-missile platform.
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+              SkyDenex delivers fully autonomous, non-lethal drone defense systems that protect critical infrastructure 
+              with AI-powered precision and zero collateral damage.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
               <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6"
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
                 onClick={() => {
-                  document.getElementById("problem")?.scrollIntoView({ behavior: "smooth" });
+                  document.getElementById("solution")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Learn More <ArrowRight className="ml-2 h-5 w-5" />
+                Discover Our Technology <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
+                size="lg"
                 variant="outline"
-                className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-6"
+                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm"
                 onClick={() => {
                   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Contact Us
+                <Play className="mr-2 h-5 w-5" />
+                Watch Demo
               </Button>
             </div>
+            
+            {/* Key metrics */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-400 mb-2">≤10cm</div>
+                <div className="text-gray-300">Tracking Precision</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-400 mb-2">€160</div>
+                <div className="text-gray-300">Cost per Missile</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-400 mb-2">0%</div>
+                <div className="text-gray-300">Collateral Damage</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </div>

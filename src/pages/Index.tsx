@@ -4,34 +4,17 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
-import AboutUs from "@/components/AboutUs";
+import Technology from "@/components/Technology";
+import Market from "@/components/Market";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { NavigationMenuLink } from "@/components/ui/navigation-menu"; 
-
-// This adds some custom styling to override the text colors in the Solution component
-const customStyles = `
-  .feature-title {
-    color: #c084fc !important; /* bright purple color for better readability */
-    font-weight: 600;
-  }
-  
-  /* Problem component text color overrides */
-  h4.text-xl.font-semibold.mb-2.text-center {
-    color: #8B5CF6 !important; /* vivid purple for better visibility */
-  }
-  
-  /* Solution component feature title overrides */
-  .text-xl.font-semibold.ml-3 {
-    color: #a5b4fc !important; /* light indigo color for better visibility */
-  }
-`;
 
 const Index = () => {
   // Refs for scrolling to sections
   const problemRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
+  const technologyRef = useRef<HTMLDivElement>(null);
+  const marketRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   
   // Handle smooth scrolling to sections
@@ -41,13 +24,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-gray-100">
-      {/* Inject custom styles */}
-      <style>{customStyles}</style>
-      
       <Navbar 
         onProblemClick={() => scrollToSection(problemRef)}
         onSolutionClick={() => scrollToSection(solutionRef)}
-        onAboutClick={() => scrollToSection(aboutRef)}
+        onTechnologyClick={() => scrollToSection(technologyRef)}
+        onMarketClick={() => scrollToSection(marketRef)}
         onContactClick={() => scrollToSection(contactRef)}
       />
       <Hero />
@@ -57,8 +38,11 @@ const Index = () => {
       <div ref={solutionRef}>
         <Solution />
       </div>
-      <div ref={aboutRef}>
-        <AboutUs />
+      <div ref={technologyRef}>
+        <Technology />
+      </div>
+      <div ref={marketRef}>
+        <Market />
       </div>
       <div ref={contactRef}>
         <Contact />
