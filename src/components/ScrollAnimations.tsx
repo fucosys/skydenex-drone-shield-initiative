@@ -39,7 +39,7 @@ const ScrollAnimations = () => {
           style={{
             left: `${15 + i * 25}%`,
             bottom: `${-20 + Math.min(scrollY * 0.15, 120)}%`,
-            opacity: scrollY > 250 + i * 100 ? 1 : 0, // Delayed to intercept drones
+            opacity: scrollY > 400 + i * 150 ? 1 : 0, // Further delayed to intercept drones mid-flight
             transform: `rotate(-15deg)`,
           }}
         >
