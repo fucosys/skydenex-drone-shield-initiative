@@ -47,7 +47,7 @@ const Contact = () => {
               <CardContent className="p-6 text-center">
                 <Building className="h-8 w-8 text-blue-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">Enterprise Solutions</h3>
-                <p className="text-sm text-gray-100">Critical infrastructure and airport security</p>
+                <p className="text-sm text-white">Critical infrastructure and airport security</p>
               </CardContent>
             </Card>
             
@@ -55,7 +55,7 @@ const Contact = () => {
               <CardContent className="p-6 text-center">
                 <Users className="h-8 w-8 text-green-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">Investment</h3>
-                <p className="text-sm text-gray-100">Partnership and funding opportunities</p>
+                <p className="text-sm text-white">Partnership and funding opportunities</p>
               </CardContent>
             </Card>
             
@@ -63,7 +63,7 @@ const Contact = () => {
               <CardContent className="p-6 text-center">
                 <Mail className="h-8 w-8 text-purple-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">General Inquiry</h3>
-                <p className="text-sm text-gray-100">Technology questions and demos</p>
+                <p className="text-sm text-white">Technology questions and demos</p>
               </CardContent>
             </Card>
           </div>
