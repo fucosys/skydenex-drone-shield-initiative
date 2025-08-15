@@ -46,10 +46,8 @@ const Problem = () => {
               Warfare Has <span className="text-red-500">Fundamentally Changed</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              On battlefields in Ukraine, we're witnessing a twisted form of gamification emerge. 
-              Drone pilots earn points for destruction—six points for a soldier, twenty for damaging a tank, forty for destroying one.
-              Even more concerning are the "sit and wait" tactics, where kamikaze drones land near roads, turn off propellers, 
-              and wait with cameras on until vehicles approach—then slam into them with devastating effect.
+              Drone warfare has become gamified. Pilots earn points for destruction—6 for a soldier, 20 for damaging a tank, 40 for destroying one.
+              "Sit and wait" tactics involve drones landing near roads, powering down, then activating when vehicles approach.
             </p>
           </div>
         </div>
@@ -59,9 +57,8 @@ const Problem = () => {
             <div className="bg-gradient-to-r from-red-900/20 to-orange-900/20 border border-red-500/20 rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4 text-red-400">The Incentive Structure</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                The best-performing units use their points in a digital marketplace—an 'Amazon for warfare'—to get 
-                better drones and equipment. The most lethal teams become even more formidable, creating a 
-                devastatingly effective and self-improving cycle of destruction.
+                Units earn points for a digital marketplace—an 'Amazon for warfare'—to get better equipment. 
+                The most lethal teams become more formidable, creating a self-improving cycle of destruction.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
@@ -126,9 +123,8 @@ const Problem = () => {
           <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8 max-w-4xl mx-auto backdrop-blur-sm">
             <h3 className="text-2xl font-bold mb-4 text-blue-400">The Problem Requires a New Solution</h3>
             <p className="text-xl text-gray-300 leading-relaxed">
-              We have built it. SkyDenex is a fully autonomous, scalable, and non-lethal drone defense system 
-              designed from the ground up to counter modern drone threats with a protective dome operating 24/7 
-              without human intervention.
+              SkyDenex is a fully autonomous, non-lethal drone defense system. 
+              Protective dome operating 24/7 without human intervention.
             </p>
           </div>
         </div>

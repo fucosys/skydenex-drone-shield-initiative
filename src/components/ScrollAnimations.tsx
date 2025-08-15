@@ -2,101 +2,125 @@ import { useEffect, useState } from 'react';
 
 const ScrollAnimations = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    const element = document.getElementById('scroll-animations');
-    if (element) {
-      observer.observe(element);
-    }
-
     window.addEventListener('scroll', handleScroll);
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      if (element) {
-        observer.unobserve(element);
-      }
     };
   }, []);
 
+  const progress = Math.min(scrollY / 2000, 1);
+
   return (
-    <div id="scroll-animations" className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
-      {/* Missile animation triggered by scroll */}
-      {isVisible && (
+    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+      {/* Defense grid background */}
+      <div 
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `radial-gradient(circle at ${50 + Math.sin(scrollY * 0.001) * 10}% ${50 + Math.cos(scrollY * 0.0015) * 10}%, rgba(59, 130, 246, 0.3) 0%, transparent 70%)`,
+          transform: `scale(${1 + progress * 0.2})`,
+        }}
+      />
+
+      {/* Interceptor missiles launching */}
+      {[...Array(3)].map((_, i) => (
+        <div
+          key={`interceptor-${i}`}
+          className="absolute transition-all duration-500 ease-out"
+          style={{
+            left: `${15 + i * 25}%`,
+            bottom: `${-20 + Math.min(scrollY * 0.15, 120)}%`,
+            opacity: scrollY > 100 + i * 100 ? 1 : 0,
+            transform: `rotate(-15deg)`,
+          }}
+        >
+          <div className="relative">
+            {/* Missile body */}
+            <div className="w-1 h-8 bg-gradient-to-t from-slate-400 to-slate-200 rounded-full"></div>
+            {/* Exhaust trail */}
+            <div className="absolute top-8 left-0 w-1 h-12 bg-gradient-to-t from-orange-500 via-yellow-400 to-transparent opacity-80 animate-pulse"></div>
+          </div>
+        </div>
+      ))}
+
+      {/* Threat drones incoming */}
+      {[...Array(4)].map((_, i) => (
+        <div
+          key={`threat-${i}`}
+          className="absolute transition-all duration-700 ease-linear"
+          style={{
+            right: `${-10 + Math.min(scrollY * 0.12, 100 + i * 10)}%`,
+            top: `${20 + i * 15 + Math.sin(scrollY * 0.005 + i) * 5}%`,
+            opacity: scrollY > 150 + i * 50 ? 1 : 0,
+            transform: `rotate(${-10 + Math.sin(scrollY * 0.003 + i) * 5}deg)`,
+          }}
+        >
+          <div className="w-4 h-4 bg-red-600 relative">
+            {/* Drone propellers */}
+            <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+          </div>
+        </div>
+      ))}
+
+      {/* Interception effects */}
+      {scrollY > 500 && (
         <>
+          {/* Radar sweeps */}
           <div 
-            className="absolute transition-all duration-1000 ease-out"
+            className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-green-400 border-dashed rounded-full animate-spin opacity-40"
             style={{
-              left: `${Math.min(100, scrollY * 0.1)}%`,
-              top: `${20 + Math.sin(scrollY * 0.01) * 10}%`,
-              transform: `rotate(${scrollY * 0.05}deg)`,
-              opacity: scrollY > 100 ? 1 : 0,
+              animationDuration: '4s',
+              transform: `scale(${1 + Math.sin(scrollY * 0.01) * 0.2})`,
             }}
-          >
-            <div className="w-8 h-2 bg-gradient-to-r from-red-500 to-orange-400 rounded-full relative">
-              <div className="absolute -right-2 top-0 w-4 h-2 bg-gradient-to-r from-orange-400 to-yellow-300 rounded-full opacity-80"></div>
-              <div className="absolute -right-4 top-0.5 w-2 h-1 bg-yellow-300 rounded-full opacity-60"></div>
-            </div>
-          </div>
-
-          {/* Drone animation */}
-          <div 
-            className="absolute transition-all duration-1000 ease-out"
-            style={{
-              right: `${Math.min(100, scrollY * 0.08)}%`,
-              top: `${40 + Math.cos(scrollY * 0.008) * 15}%`,
-              transform: `rotate(${-scrollY * 0.03}deg)`,
-              opacity: scrollY > 200 ? 1 : 0,
-            }}
-          >
-            <div className="w-6 h-6 bg-slate-700 rounded-sm relative">
-              <div className="absolute -top-1 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-spin"></div>
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-400 rounded-full animate-spin"></div>
-              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-spin"></div>
-              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-blue-400 rounded-full animate-spin"></div>
-            </div>
-          </div>
-
-          {/* Interceptor net animation */}
-          <div 
-            className="absolute transition-all duration-1000 ease-out"
-            style={{
-              left: `${30 + Math.sin(scrollY * 0.005) * 20}%`,
-              top: `${60 + Math.cos(scrollY * 0.007) * 10}%`,
-              opacity: scrollY > 400 ? 1 : 0,
-            }}
-          >
-            <div className="w-12 h-12 border-2 border-green-400 border-dashed rounded-full animate-pulse">
-              <div className="w-full h-full border border-green-300 rounded-full opacity-50"></div>
-            </div>
-          </div>
-
-          {/* Floating particles */}
-          {[...Array(8)].map((_, i) => (
+          />
+          
+          {/* Target locks */}
+          {[...Array(2)].map((_, i) => (
             <div
-              key={i}
-              className="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+              key={`lock-${i}`}
+              className="absolute animate-pulse"
               style={{
-                left: `${10 + (i * 10) + Math.sin(scrollY * 0.01 + i) * 5}%`,
-                top: `${20 + Math.cos(scrollY * 0.008 + i) * 20}%`,
-                opacity: scrollY > 150 ? 0.6 : 0,
-                animationDelay: `${i * 0.2}s`,
+                right: `${30 + i * 20}%`,
+                top: `${40 + i * 10}%`,
+                opacity: scrollY > 600 + i * 100 ? 0.8 : 0,
+              }}
+            >
+              <div className="w-8 h-8 border-2 border-yellow-400 rounded-full relative">
+                <div className="absolute inset-2 border border-yellow-300 rounded-full"></div>
+                <div className="absolute inset-3 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+              </div>
+            </div>
+          ))}
+
+          {/* Impact flashes */}
+          {scrollY > 800 && (
+            <div 
+              className="absolute top-1/3 right-1/3 w-6 h-6 bg-yellow-300 rounded-full animate-ping opacity-60"
+              style={{
+                animationDuration: '1s',
+                boxShadow: '0 0 20px rgba(255, 255, 0, 0.8)',
               }}
             />
-          ))}
+          )}
         </>
+      )}
+
+      {/* Success indicators */}
+      {scrollY > 1000 && (
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="text-green-400 font-bold text-xl animate-pulse opacity-70">
+            THREATS NEUTRALIZED
+          </div>
+        </div>
       )}
     </div>
   );

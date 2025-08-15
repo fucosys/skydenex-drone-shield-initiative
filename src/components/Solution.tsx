@@ -46,7 +46,7 @@ const Solution = () => {
               The <span className="text-blue-500">SkyDenex μ-System</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              A compact autonomous defense platform that operates on a simple but powerful principle: 
+              Compact autonomous defense platform. Simple principle: 
               <strong className="text-blue-400"> Detect, Aim, Neutralize.</strong>
             </p>
           </div>
@@ -89,8 +89,7 @@ const Solution = () => {
             <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <h3 className="text-2xl font-bold mb-6 text-blue-400">Compact & Powerful</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                The SkyDenex μ-System fits in a 60 × 60 cm footprint while delivering 
-                enterprise-grade autonomous drone defense capabilities.
+                60 × 60 cm footprint delivering enterprise-grade autonomous defense.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>• Plug-and-play integration</li>
@@ -102,8 +101,7 @@ const Solution = () => {
             <div className="bg-gradient-to-br from-green-900/30 to-blue-900/30 border border-green-500/30 rounded-xl p-8 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
               <h3 className="text-2xl font-bold mb-6 text-green-400">Multi-Platform Ready</h3>
               <p className="text-gray-300 mb-4 leading-relaxed">
-                Mountable on vehicles, vessels, or fixed installations. Multiple units create 
-                a cooperative anti-UAS "bubble" with sensor fusion.
+                Mountable anywhere. Multiple units create cooperative anti-UAS "bubble".
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>• Vehicle convoy protection</li>
