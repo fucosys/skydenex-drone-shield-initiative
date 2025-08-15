@@ -8,7 +8,29 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedInquiry, setSelectedInquiry] = useState<'enterprise' | 'investment' | 'general'>('general');
   const { toast } = useToast();
+
+  const inquiryTypes = {
+    enterprise: {
+      title: "Enterprise Solutions Inquiry",
+      description: "Let's discuss critical infrastructure protection",
+      companyLabel: "Organization/Facility",
+      messageLabel: "Tell us about your security requirements and facility details"
+    },
+    investment: {
+      title: "Investment & Partnership",
+      description: "Explore funding and partnership opportunities",
+      companyLabel: "Investment Firm/Organization",
+      messageLabel: "Share your investment focus and partnership interests"
+    },
+    general: {
+      title: "General Inquiry",
+      description: "Technology questions and demo requests",
+      companyLabel: "Company (optional)",
+      messageLabel: "How can we help you?"
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +65,14 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Interest Areas */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="bg-gradient-to-br from-slate-800/90 to-blue-900/90 border-blue-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+            <Card 
+              className={`cursor-pointer transition-all duration-300 ${
+                selectedInquiry === 'enterprise' 
+                  ? 'bg-gradient-to-br from-slate-700/90 to-blue-800/90 border-blue-400/50 ring-2 ring-blue-400/30 scale-105' 
+                  : 'bg-gradient-to-br from-slate-800/90 to-blue-900/90 border-blue-500/20 hover:scale-105'
+              } backdrop-blur-sm`}
+              onClick={() => setSelectedInquiry('enterprise')}
+            >
               <CardContent className="p-6 text-center">
                 <Building className="h-8 w-8 text-blue-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">Enterprise Solutions</h3>
@@ -51,7 +80,14 @@ const Contact = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-slate-800/90 to-green-900/90 border-green-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+            <Card 
+              className={`cursor-pointer transition-all duration-300 ${
+                selectedInquiry === 'investment' 
+                  ? 'bg-gradient-to-br from-slate-700/90 to-green-800/90 border-green-400/50 ring-2 ring-green-400/30 scale-105' 
+                  : 'bg-gradient-to-br from-slate-800/90 to-green-900/90 border-green-500/20 hover:scale-105'
+              } backdrop-blur-sm`}
+              onClick={() => setSelectedInquiry('investment')}
+            >
               <CardContent className="p-6 text-center">
                 <Users className="h-8 w-8 text-green-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">Investment</h3>
@@ -59,7 +95,14 @@ const Contact = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-slate-800/90 to-purple-900/90 border-purple-500/20 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
+            <Card 
+              className={`cursor-pointer transition-all duration-300 ${
+                selectedInquiry === 'general' 
+                  ? 'bg-gradient-to-br from-slate-700/90 to-purple-800/90 border-purple-400/50 ring-2 ring-purple-400/30 scale-105' 
+                  : 'bg-gradient-to-br from-slate-800/90 to-purple-900/90 border-purple-500/20 hover:scale-105'
+              } backdrop-blur-sm`}
+              onClick={() => setSelectedInquiry('general')}
+            >
               <CardContent className="p-6 text-center">
                 <Mail className="h-8 w-8 text-purple-400 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-white mb-2">General Inquiry</h3>
@@ -71,8 +114,8 @@ const Contact = () => {
           {/* Simplified Contact Form */}
           <Card className="bg-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl font-bold text-white">Contact SkyDenex</CardTitle>
-              <p className="text-gray-300">We'll respond within 24 hours</p>
+              <CardTitle className="text-2xl font-bold text-white">{inquiryTypes[selectedInquiry].title}</CardTitle>
+              <p className="text-gray-300">{inquiryTypes[selectedInquiry].description}</p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -91,12 +134,12 @@ const Contact = () => {
                 </div>
 
                 <Input 
-                  placeholder="Company (optional)" 
+                  placeholder={inquiryTypes[selectedInquiry].companyLabel} 
                   className="bg-slate-700/50 border-slate-600 text-white placeholder:text-gray-400 focus:border-cyan-400 transition-colors"
                 />
 
                 <Textarea 
-                  placeholder="How can we help you?"
+                  placeholder={inquiryTypes[selectedInquiry].messageLabel}
                   className="bg-slate-700/50 border-slate-600 text-white placeholder:text-gray-400 min-h-[100px] focus:border-cyan-400 transition-colors"
                   required
                 />
