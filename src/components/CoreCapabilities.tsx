@@ -52,45 +52,45 @@ const CoreCapabilities = () => {
 
         {/* Three Key Areas */}
         <div className={`grid md:grid-cols-3 gap-8 mb-16 transition-all duration-1000 delay-300 ${fadeInClass}`}>
-           <Card className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-500/20 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:rotate-1">
+           <Card className="bg-slate-900/80 border-2 border-blue-400/30 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-blue-400/30 transition-all duration-500 hover:rotate-1">
             <CardContent className="p-8 text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-pulse">
-                  <Eye className="h-8 w-8 text-blue-400 group-hover:text-blue-300 group-hover:animate-pulse" />
+                <div className="w-16 h-16 bg-blue-500/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/50 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-pulse">
+                  <Eye className="h-8 w-8 text-blue-100 group-hover:text-white group-hover:animate-pulse" />
                 </div>
-                <h3 className="text-2xl font-bold text-blue-300 mb-4 group-hover:text-blue-200 transition-colors">AI-Powered Classification</h3>
+                <h3 className="text-2xl font-bold text-blue-100 mb-4 group-hover:text-white transition-colors">AI-Powered Classification</h3>
               </div>
-              <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+              <p className="text-blue-50 leading-relaxed group-hover:text-white transition-colors">
                 Advanced computer vision processed by proprietary AI instantly distinguishes between 
                 different moving objects like birds and drones with centimeter-level precision.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 hover:rotate-1">
+          <Card className="bg-slate-900/80 border-2 border-green-400/30 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-green-400/30 transition-all duration-500 hover:rotate-1">
             <CardContent className="p-8 text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-bounce">
-                  <Shield className="h-8 w-8 text-green-400 group-hover:text-green-300 group-hover:animate-bounce" />
+                <div className="w-16 h-16 bg-green-500/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-500/50 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-bounce">
+                  <Shield className="h-8 w-8 text-green-100 group-hover:text-white group-hover:animate-bounce" />
                 </div>
-                <h3 className="text-2xl font-bold text-green-300 mb-4 group-hover:text-green-200 transition-colors">Non-Lethal Neutralization</h3>
+                <h3 className="text-2xl font-bold text-green-100 mb-4 group-hover:text-white transition-colors">Non-Lethal Neutralization</h3>
               </div>
-              <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+              <p className="text-green-50 leading-relaxed group-hover:text-white transition-colors">
                 No explosives. We launch a precision missile that deploys a large net, physically 
                 capturing the drone and safely landing it with a parachute.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-purple-900/20 to-violet-900/20 border-purple-500/20 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:rotate-1">
+          <Card className="bg-slate-900/80 border-2 border-purple-400/30 backdrop-blur-sm group hover:scale-110 hover:shadow-2xl hover:shadow-purple-400/30 transition-all duration-500 hover:rotate-1">
             <CardContent className="p-8 text-center">
               <div className="mb-6">
-                <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600/40 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-spin">
-                  <Zap className="h-8 w-8 text-purple-400 group-hover:text-purple-300 group-hover:animate-spin" />
+                <div className="w-16 h-16 bg-purple-500/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500/50 transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:animate-spin">
+                  <Zap className="h-8 w-8 text-purple-100 group-hover:text-white group-hover:animate-spin" />
                 </div>
-                <h3 className="text-2xl font-bold text-purple-300 mb-4 group-hover:text-purple-200 transition-colors">Autonomous Operation</h3>
+                <h3 className="text-2xl font-bold text-purple-100 mb-4 group-hover:text-white transition-colors">Autonomous Operation</h3>
               </div>
-              <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+              <p className="text-purple-50 leading-relaxed group-hover:text-white transition-colors">
                 Completely autonomous system removes human reaction time as a bottleneck and 
                 allows for truly scalable defense that grows better with multiple units.
               </p>

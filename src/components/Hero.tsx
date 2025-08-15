@@ -16,23 +16,26 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background - Non-clickable background video */}
-      <div className="absolute inset-0 z-0">
-        {/* Video will be placed here - using gradient placeholder for now */}
+      {/* Video Background - Completely non-clickable background video */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
-          style={{ pointerEvents: 'none' }}
+          className="w-full h-full object-cover pointer-events-none"
+          style={{ 
+            pointerEvents: 'none',
+            userSelect: 'none',
+            touchAction: 'none'
+          }}
         >
           <source src="/hero-background.mp4" type="video/mp4" />
-          {/* Fallback gradient if video fails to load */}
-          <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
         </video>
+        {/* Fallback gradient for when video is not available */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 opacity-90"></div>
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
       
       {/* Animated grid pattern */}
