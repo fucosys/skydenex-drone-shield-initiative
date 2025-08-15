@@ -76,26 +76,15 @@ const Hero = () => {
               with AI-powered precision and zero collateral damage.
             </p>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+            <div className="flex justify-center mb-12">
               <Button
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg hover:scale-105 transition-all duration-300"
                 onClick={() => {
                   document.getElementById("solution")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Discover Our Technology <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-sm"
-                onClick={() => {
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Watch Demo
               </Button>
             </div>
             
