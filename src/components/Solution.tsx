@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Target, Rocket } from 'lucide-react';
+import { Eye, Target, Shield, Zap } from 'lucide-react';
 
 const Solution = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,24 +30,6 @@ const Solution = () => {
 
   const fadeInClass = isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10';
 
-  const features = [
-    {
-      icon: <Shield className="h-10 w-10 text-blue-500" />,
-      title: "360° Defense Coverage",
-      description: "Mechanized gimbal platform provides full 360-degree protection against incoming threats."
-    },
-    {
-      icon: <Target className="h-10 w-10 text-blue-500" />,
-      title: "Advanced Threat Detection",
-      description: "State-of-the-art sensors and AI algorithms detect and track incoming drones with high accuracy."
-    },
-    {
-      icon: <Rocket className="h-10 w-10 text-blue-500" />,
-      title: "Non-Lethal Countermeasures",
-      description: "Guided micro-missiles deploy nets to safely neutralize drones without harmful collateral damage."
-    }
-  ];
-
   return (
     <div 
       id="solution" 
@@ -56,89 +38,128 @@ const Solution = () => {
     >
       <div className="container mx-auto px-4">
         <div className={`transition-all duration-1000 delay-100 ${fadeInClass}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-2">
-            Our <span className="text-blue-500">Solution</span>
-          </h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto mb-12"></div>
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-4">
+              Our Solution
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              The <span className="text-blue-500">SkyDenex μ-System</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              A compact 60 × 60 cm turreted platform that operates on a simple but powerful principle: 
+              <strong className="text-blue-400"> Detect, Aim, Neutralize.</strong>
+            </p>
+          </div>
         </div>
 
-        <div className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-1000 delay-300 ${fadeInClass}`}>
-          <div className="order-2 md:order-1">
-            <div className="bg-slate-800 p-6 rounded-lg border border-blue-500/20 relative overflow-hidden">
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
-              <div className="relative">
-                <h3 className="text-2xl font-semibold mb-6 text-blue-400">Skydenex Defense Platform</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  A modular, magnetically attachable platform built on a mechanized gimbal system that provides 
-                  stability and full 360-degree coverage. The platform is equipped with:
-                </p>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-3">•</span>
-                    <span>Advanced sensor arrays and AI for rapid drone detection and tracking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-3">•</span>
-                    <span>Multi micro-missile launcher with guided targeting systems</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-3">•</span>
-                    <span>Non-lethal net deployment mechanism for drone neutralization</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-3">•</span>
-                    <span>Lightweight construction for minimal impact on vehicle performance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-500 mr-3">•</span>
-                    <span>Easy manual reloading for continued protection during operations</span>
-                  </li>
-                </ul>
+        {/* Three Key Areas */}
+        <div className={`grid md:grid-cols-3 gap-8 mb-16 transition-all duration-1000 delay-300 ${fadeInClass}`}>
+          <Card className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border-blue-500/20 backdrop-blur-sm group hover:scale-105 transition-transform duration-300">
+            <CardContent className="p-8 text-center">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/30 transition-colors">
+                  <Eye className="h-8 w-8 text-blue-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-blue-300 mb-4">AI-Powered Classification</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                Advanced computer vision processed by proprietary AI instantly distinguishes between 
+                different moving objects like birds and drones with centimeter-level precision.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 border-green-500/20 backdrop-blur-sm group hover:scale-105 transition-transform duration-300">
+            <CardContent className="p-8 text-center">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-green-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600/30 transition-colors">
+                  <Shield className="h-8 w-8 text-green-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-green-300 mb-4">Non-Lethal Neutralization</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                No explosives. We launch a 37 cm μ-missile that deploys a 20 m² net, physically 
+                capturing the drone and safely landing it with a parachute.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gradient-to-br from-purple-900/20 to-violet-900/20 border-purple-500/20 backdrop-blur-sm group hover:scale-105 transition-transform duration-300">
+            <CardContent className="p-8 text-center">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-purple-600/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600/30 transition-colors">
+                  <Zap className="h-8 w-8 text-purple-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-purple-300 mb-4">Autonomous Operation</h3>
+              </div>
+              <p className="text-gray-300 leading-relaxed">
+                Completely autonomous system removes human reaction time as a bottleneck and 
+                allows for truly scalable defense that grows better with multiple units.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Technical Specifications */}
+        <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 delay-500 ${fadeInClass}`}>
+          <div className="space-y-8">
+            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 border border-slate-600/50 rounded-2xl p-8 backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-6 text-blue-400">Technical Specifications</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                  <span className="text-gray-300">Platform Size</span>
+                  <span className="text-blue-400 font-semibold">60 × 60 cm</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                  <span className="text-gray-300">Tracking Precision</span>
+                  <span className="text-blue-400 font-semibold">≤ 10 cm</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                  <span className="text-gray-300">Missile Length</span>
+                  <span className="text-blue-400 font-semibold">37 cm</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                  <span className="text-gray-300">Net Coverage</span>
+                  <span className="text-blue-400 font-semibold">20 m²</span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-slate-600/30">
+                  <span className="text-gray-300">Maneuver Authority</span>
+                  <span className="text-blue-400 font-semibold">>5 Gs</span>
+                </div>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-gray-300">Cost per Missile</span>
+                  <span className="text-green-400 font-semibold">€160</span>
+                </div>
               </div>
             </div>
           </div>
-          
-          <div className="order-1 md:order-2 space-y-6">
-            {features.map((feature, index) => (
-              <Card key={index} className="bg-slate-800 border-blue-500/20 overflow-hidden">
-                <div className="absolute h-full w-1 bg-blue-600 left-0"></div>
-                <CardContent className="p-6 pl-8">
-                  <div className="flex items-center mb-4">
-                    {feature.icon}
-                    <h4 className="text-xl font-semibold ml-3 text-blue-300">{feature.title}</h4>
-                  </div>
-                  <p className="text-gray-300">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-        
-        <div className={`mt-16 transition-all duration-1000 delay-500 ${fadeInClass}`}>
-          <div className="relative rounded-xl overflow-hidden shadow-xl border border-blue-500/20">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div>
-            <div className="relative p-8 text-center">
-              <h3 className="text-2xl font-bold mb-4">Key Advantages</h3>
-              <div className="grid md:grid-cols-3 gap-6 text-left mt-6">
-                <div className="bg-slate-800/50 p-5 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2 text-blue-300">Cost-Effective</h4>
-                  <p className="text-gray-300 text-sm">
-                    Significantly lower cost than competing solutions, making widespread deployment feasible.
-                  </p>
-                </div>
-                <div className="bg-slate-800/50 p-5 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2 text-blue-300">Easy Integration</h4>
-                  <p className="text-gray-300 text-sm">
-                    Magnetic attachment allows deployment on various vehicle types without permanent modification.
-                  </p>
-                </div>
-                <div className="bg-slate-800/50 p-5 rounded-lg">
-                  <h4 className="text-lg font-semibold mb-2 text-blue-300">Logistics-Friendly</h4>
-                  <p className="text-gray-300 text-sm">
-                    Lightweight design and simple reloading mechanism optimized for field operations.
-                  </p>
-                </div>
+
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-xl p-8 backdrop-blur-sm">
+              <div className="flex items-center mb-4">
+                <Target className="h-8 w-8 text-blue-400" />
+                <h4 className="text-xl font-semibold ml-3 text-blue-300">Autonomous Detection & Tracking</h4>
               </div>
+              <p className="text-gray-300 mb-4">
+                AI-driven stereo cameras with edge processing using Jetson Orin and advanced CNN algorithms.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>• Passive stereo camera system</li>
+                <li>• RF-independent operation</li>
+                <li>• Real-time threat classification</li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-900/30 to-blue-900/30 border border-green-500/30 rounded-xl p-8 backdrop-blur-sm">
+              <h4 className="text-xl font-semibold mb-4 text-green-300">Network Integration</h4>
+              <p className="text-gray-300 mb-4">
+                Multiple turrets create a cooperative anti-UAS "bubble" with sensor fusion capabilities.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>• REST API integration</li>
+                <li>• ROS 2/STANAG-4586 compliance</li>
+                <li>• Distributed computing cloud</li>
+              </ul>
             </div>
           </div>
         </div>
