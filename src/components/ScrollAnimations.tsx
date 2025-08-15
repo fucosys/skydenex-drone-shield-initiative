@@ -5,6 +5,7 @@ const ScrollAnimations = () => {
   const [isInProblemSection, setIsInProblemSection] = useState(false);
   const [isInSolutionSection, setIsInSolutionSection] = useState(false);
   const [maxMissileProgress, setMaxMissileProgress] = useState(0);
+  const [maxDroneProgress, setMaxDroneProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,12 @@ const ScrollAnimations = () => {
         const rect = problemSection.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
         setIsInProblemSection(isVisible);
+        
+        // Track max drone progress to keep them visible
+        if (rect.top < window.innerHeight) {
+          const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / window.innerHeight));
+          setMaxDroneProgress(prev => Math.max(prev, progress));
+        }
       }
 
       // Check if we're in the Solution section  
@@ -40,8 +47,8 @@ const ScrollAnimations = () => {
     };
   }, []);
 
-  // Show drones during problem section, missiles during solution section
-  const showDrones = isInProblemSection;
+  // Show drones during problem section and keep them visible after
+  const showDrones = isInProblemSection || maxDroneProgress > 0;
   const showMissiles = isInSolutionSection || maxMissileProgress > 0;
 
   return (
@@ -69,27 +76,31 @@ const ScrollAnimations = () => {
         );
       })}
 
-      {/* Threat drones incoming - only during problem section */}
-      {showDrones && [...Array(4)].map((_, i) => (
-        <div
-          key={`threat-${i}`}
-          className="absolute transition-all duration-700 ease-linear"
-          style={{
-            right: `${-10 + Math.min(scrollY * 0.12, 100 + i * 10)}%`,
-            top: `${20 + i * 15 + Math.sin(scrollY * 0.005 + i) * 5}%`,
-            opacity: scrollY > 150 + i * 50 ? 1 : 0,
-            transform: `rotate(${-10 + Math.sin(scrollY * 0.003 + i) * 5}deg)`,
-          }}
-        >
-          <div className="w-4 h-4 bg-red-600 relative">
-            {/* Drone propellers */}
-            <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
-            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
-            <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+      {/* Threat drones incoming - stay visible after animation */}
+      {showDrones && [...Array(4)].map((_, i) => {
+        const droneProgress = Math.max(maxDroneProgress, isInProblemSection ? scrollY * 0.0005 : 0);
+        
+        return (
+          <div
+            key={`threat-${i}`}
+            className="absolute transition-all duration-700 ease-linear"
+            style={{
+              right: `${Math.max(-10, Math.min(90 + i * 10, -10 + droneProgress * 1000))}%`, // Stay in final position
+              top: `${20 + i * 15 + Math.sin(scrollY * 0.005 + i) * 5}%`,
+              opacity: droneProgress > 0.01 + i * 0.02 ? 1 : 0,
+              transform: `rotate(${-10 + Math.sin(scrollY * 0.003 + i) * 5}deg)`,
+            }}
+          >
+            <div className="w-4 h-4 bg-red-600 relative">
+              {/* Drone propellers */}
+              <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+              <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+              <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-red-400 rounded-full animate-spin"></div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
