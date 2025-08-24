@@ -19,12 +19,21 @@ const Hero = () => {
   useEffect(() => {
     const getVideoUrl = async () => {
       try {
-        const { data } = await supabase.storage
+        console.log('Attempting to load video from Supabase...');
+        const { data, error } = await supabase.storage
           .from('videos')
-          .createSignedUrl('SkyDenex - RealShowCase - LowQuality.mp4', 3600); // 1 hour expiry
+          .createSignedUrl('SkyDenex - RealShowCase - LowQuality.mp4', 3600);
+        
+        if (error) {
+          console.error('Supabase storage error:', error);
+          return;
+        }
         
         if (data) {
+          console.log('Video URL generated successfully:', data.signedUrl);
           setVideoUrl(data.signedUrl);
+        } else {
+          console.log('No video data returned from Supabase');
         }
       } catch (error) {
         console.error('Error loading video:', error);
