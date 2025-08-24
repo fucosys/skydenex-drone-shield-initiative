@@ -2,9 +2,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [videoUrl, setVideoUrl] = useState<string>("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,24 +16,43 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const getVideoUrl = async () => {
+      try {
+        const { data } = await supabase.storage
+          .from('videos')
+          .createSignedUrl('SkyDenex - RealShowCase - LowQuality.mp4', 3600); // 1 hour expiry
+        
+        if (data) {
+          setVideoUrl(data.signedUrl);
+        }
+      } catch (error) {
+        console.error('Error loading video:', error);
+      }
+    };
+
+    getVideoUrl();
+  }, []);
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background - Completely non-clickable background video */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover pointer-events-none"
-          style={{ 
-            pointerEvents: 'none',
-            userSelect: 'none',
-            touchAction: 'none'
-          }}
-        >
-          <source src="/SkyDenex%20-%20RealShowCase%20-%20LowQuality.mp4" type="video/mp4" />
-        </video>
+        {videoUrl && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            src={videoUrl}
+            className="w-full h-full object-cover pointer-events-none"
+            style={{ 
+              pointerEvents: 'none',
+              userSelect: 'none',
+              touchAction: 'none'
+            }}
+          />
+        )}
         {/* Fallback gradient for when video is not available */}
         <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 opacity-90"></div>
         {/* Dark overlay for better text readability */}
