@@ -20,6 +20,20 @@ const Hero = () => {
     const getVideoUrl = async () => {
       try {
         console.log('Attempting to load video from Supabase...');
+        
+        // First, let's list all files in the bucket to see what's available
+        const { data: files, error: listError } = await supabase.storage
+          .from('videos')
+          .list();
+        
+        if (listError) {
+          console.error('Error listing files:', listError);
+          return;
+        }
+        
+        console.log('Files in videos bucket:', files);
+        
+        // Try to get the signed URL for the video
         const { data, error } = await supabase.storage
           .from('videos')
           .createSignedUrl('SkyDenex - RealShowCase - LowQuality.mp4', 3600);
