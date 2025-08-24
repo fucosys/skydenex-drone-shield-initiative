@@ -62,8 +62,9 @@ const Hero = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background - Secured from Supabase */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {videoUrl && (
+        {videoUrl ? (
           <video
+            key={videoUrl} // Force re-render when URL changes
             autoPlay
             muted
             loop
@@ -75,12 +76,20 @@ const Hero = () => {
               userSelect: 'none',
               touchAction: 'none'
             }}
+            onLoadStart={() => console.log('Video load started')}
+            onLoadedData={() => console.log('Video data loaded')}
+            onCanPlay={() => console.log('Video can play')}
+            onError={(e) => console.error('Video error:', e)}
           />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center">
+            <div className="text-white text-lg">Loading video...</div>
+          </div>
         )}
         {/* Fallback gradient when video is loading/unavailable */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 opacity-70"></div>
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
       
       {/* Animated grid pattern */}
