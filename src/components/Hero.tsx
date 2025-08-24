@@ -21,33 +21,34 @@ const Hero = () => {
       try {
         console.log('Attempting to load video from Supabase...');
         
-        // First, let's list all files in the bucket to see what's available
-        const { data: files, error: listError } = await supabase.storage
-          .from('videos')
-          .list();
+        // Use the exact filename as it appears in storage
+        const filename = 'SkyDenex - RealShowCase - LowQuality.mp4';
         
-        if (listError) {
-          console.error('Error listing files:', listError);
-          return;
-        }
-        
-        console.log('Files in videos bucket:', files);
-        
-        // Try to get the signed URL for the video
         const { data, error } = await supabase.storage
           .from('videos')
-          .createSignedUrl('SkyDenex - RealShowCase - LowQuality.mp4', 3600);
+          .createSignedUrl(filename, 3600);
         
         if (error) {
           console.error('Supabase storage error:', error);
+          console.error('Error details:', error.message);
           return;
         }
         
-        if (data) {
+        if (data?.signedUrl) {
           console.log('Video URL generated successfully:', data.signedUrl);
           setVideoUrl(data.signedUrl);
+          
+          // Test if the video can actually load
+          const video = document.createElement('video');
+          video.onloadedmetadata = () => {
+            console.log('Video loaded successfully with dimensions:', video.videoWidth, 'x', video.videoHeight);
+          };
+          video.onerror = (e) => {
+            console.error('Video failed to load:', e);
+          };
+          video.src = data.signedUrl;
         } else {
-          console.log('No video data returned from Supabase');
+          console.log('No signed URL returned from Supabase');
         }
       } catch (error) {
         console.error('Error loading video:', error);
