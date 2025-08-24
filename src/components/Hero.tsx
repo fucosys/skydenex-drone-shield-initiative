@@ -19,43 +19,36 @@ const Hero = () => {
   useEffect(() => {
     const getVideoUrl = async () => {
       try {
-        console.log('Attempting to load video from Supabase...');
+        console.log('Hero component: Starting video load');
         
-        // Use the exact filename as it appears in storage
         const filename = 'SkyDenex - RealShowCase - LowQuality.mp4';
+        console.log('Hero component: Requesting signed URL for:', filename);
         
         const { data, error } = await supabase.storage
           .from('videos')
           .createSignedUrl(filename, 3600);
         
         if (error) {
-          console.error('Supabase storage error:', error);
-          console.error('Error details:', error.message);
-          return;
-        }
-        
-        if (data?.signedUrl) {
-          console.log('Video URL generated successfully:', data.signedUrl);
+          console.error('Hero component: Supabase storage error:', error);
+          // Don't return, continue with fallback
+        } else if (data?.signedUrl) {
+          console.log('Hero component: Video URL generated successfully');
           setVideoUrl(data.signedUrl);
-          
-          // Test if the video can actually load
-          const video = document.createElement('video');
-          video.onloadedmetadata = () => {
-            console.log('Video loaded successfully with dimensions:', video.videoWidth, 'x', video.videoHeight);
-          };
-          video.onerror = (e) => {
-            console.error('Video failed to load:', e);
-          };
-          video.src = data.signedUrl;
         } else {
-          console.log('No signed URL returned from Supabase');
+          console.log('Hero component: No signed URL returned');
         }
       } catch (error) {
-        console.error('Error loading video:', error);
+        console.error('Hero component: Error in video loading:', error);
+        // Don't crash the component, just continue without video
       }
     };
 
-    getVideoUrl();
+    // Add a small delay to ensure the component is mounted
+    const timer = setTimeout(() => {
+      getVideoUrl();
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
